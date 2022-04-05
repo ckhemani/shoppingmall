@@ -2,38 +2,40 @@ package store;
 
 public class Store {
     // Fields
-    String name;
-    int floor;
+    String storeName;
+    int storeFloor;
     int storeNumber;
-    long phoneNumber;
+    long storePhoneNumber;
 
     // Constructor with No Parameters
     public Store() {
     }
 
     // Constructor with Parameters
-    public Store(String name, int floor, int storeNumber, long phoneNumber) {
-        this.name = name;
-        this.floor = floor;
+
+    public Store(String storeName, int storeFloor, int storeNumber, long storePhoneNumber) {
+        this.storeName = storeName;
+        this.storeFloor = storeFloor;
         this.storeNumber = storeNumber;
-        this.phoneNumber = phoneNumber;
+        this.storePhoneNumber = storePhoneNumber;
     }
 
-    // Getters and Setters
-    public String getName() {
-        return name;
+    // Getter and Setters
+
+    public String getStoreName() {
+        return storeName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setStoreName(String storeName) {
+        this.storeName = storeName;
     }
 
-    public int getFloor() {
-        return floor;
+    public int getStoreFloor() {
+        return storeFloor;
     }
 
-    public void setFloor(int floor) {
-        this.floor = floor;
+    public void setStoreFloor(int storeFloor) {
+        this.storeFloor = storeFloor;
     }
 
     public int getStoreNumber() {
@@ -44,13 +46,14 @@ public class Store {
         this.storeNumber = storeNumber;
     }
 
-    public long getPhoneNumber() {
-        return phoneNumber;
+    public long getStorePhoneNumber() {
+        return storePhoneNumber;
     }
 
-    public void setPhoneNumber(long phoneNumber) {
-        this.phoneNumber = phoneNumber;
+    public void setStorePhoneNumber(long storePhoneNumber) {
+        this.storePhoneNumber = storePhoneNumber;
     }
+
 
     // Methods
 
@@ -58,10 +61,10 @@ public class Store {
     @Override
     public String toString() {
         return "Store{" +
-                "name='" + name + '\'' +
-                ", floor=" + floor +
+                "storeName='" + storeName + '\'' +
+                ", storeFloor=" + storeFloor +
                 ", storeNumber=" + storeNumber +
-                ", phoneNumber=" + phoneNumber +
+                ", storePhoneNumber=" + storePhoneNumber +
                 '}';
     }
 }
