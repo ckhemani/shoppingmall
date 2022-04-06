@@ -23,6 +23,7 @@ public class Main {
     private static final DepartmentStore macy = new DepartmentStore("Macy",1,101,7770101,2);
     private static final GiftStore memories = new GiftStore("Memories",2,202,7770202,"anything");
     private static final CellServiceStore reachAnyWhere = new CellServiceStore("ReachAnywhere",3,303,7770303,"Verizon");
+
     private static final Employee employee1 = new Employee("employee1","employee1UserID","abcdefgh");
     private static final Employee employee2 = new Employee("employee2","employee2UserID","abcdefgh");
     private static final Employee employee3 = new Employee("employee3","employee3UserID","abcdefgh");
@@ -52,8 +53,9 @@ public class Main {
         // Register Employees in Mall Database
         addEmployeeToMallDatabase();
 
-        // Customer add in Mall Database
+        // Register new Customer and Email ID
         addCustomertoMallDatabase();
+  //      registerCustomertoMallDatabase();
     }
 
     public static void welcomeToMall(){
@@ -65,21 +67,17 @@ public class Main {
         HashSet<Store> storeList = new HashSet<>();
         storeList.add(macy);storeList.add(memories);storeList.add(reachAnyWhere);
         System.out.println(storeList);
+
     }
 
     public static void addEmployeeToMallDatabase(){
 
-        ArrayList<Employee> employee = new ArrayList<>();
 
-//        System.out.println("Please enter the Employee Name");
-//        String eName = input.nextLine();
-//        System.out.println("Please enter the Employee UserID");
-//        String eUserID = input.nextLine();
-//        System.out.println("Please enter the Employee Password");
-//        String ePassword = input.nextLine();
+        ArrayList<Employee> test1234 = new ArrayList<>();
+        test1234.add(employee1);test1234.add(employee2);test1234.add(employee3);
 
-        employee.add(employee1);employee.add(employee2);employee.add(employee3);
-        System.out.println(employee);
+        tysonCornerMall.setEmployee(test1234);
+        System.out.println(tysonCornerMall.getEmployee());
 
     }
 
@@ -87,6 +85,47 @@ public class Main {
         HashMap<Customer,EmailID> test = new HashMap<>();
         test.put(cust01,cust01emailID);test.put(cust02,cust02emailID);test.put(cust03,cust03emailID);
 
-        System.out.println(test);
+        tysonCornerMall.setCustomer(test);
+        System.out.println(tysonCornerMall.getCustomer());
+    }
+
+    public static void registerCustomertoMallDatabase() {
+        System.out.println("""
+                add : to add the Customer in Database
+                exit : to exit done with Customer Addition
+                """);
+        String custAction = input.next();
+
+        System.out.println("Please enter the number of Customers to be entered?");
+        int customerNumbers = input.nextInt();
+
+        while (customerNumbers > 0) {
+            switch (custAction) {
+                case "add":
+                    System.out.println("Adding the Customer to Mall Database");
+                    System.out.println("Please enter your Name");
+                    String cName = input.next();
+                    Customer cust = new Customer(cName);
+
+                    System.out.println("Please enter your emailID");
+                    String cEmailID = input.next();
+                    EmailID custEmailID = new EmailID(cEmailID);
+
+                    HashMap<Customer, EmailID> customer = new HashMap<>();
+                    customer.put(cust, custEmailID);
+                    System.out.println(customer);
+                    break;
+                case "exit":
+                    System.out.println("Exit it out of this menu");
+                    break;
+                default:
+                    System.out.println("Select either a OR e");
+                    break;
+
+            }
+            customerNumbers--;
+//            tysonCornerMall.getCustomer();
+
+        }
     }
 }
