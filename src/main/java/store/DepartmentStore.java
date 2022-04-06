@@ -8,4 +8,23 @@ public class DepartmentStore extends Store {
         super(storeName, storeFloor, storeNumber, storePhoneNumber);
         this.fittingRooms = fittingRooms;
     }
+
+    public int getFittingRooms() {
+        return fittingRooms;
+    }
+
+    public void setFittingRooms(int fittingRooms) {
+        this.fittingRooms = fittingRooms;
+    }
+
+    @Override
+    public String toString() {
+        return "DepartmentStore{" +
+                "fittingRooms=" + fittingRooms +
+                ", storeName='" + storeName + '\'' +
+                ", storeFloor=" + storeFloor +
+                ", storeNumber=" + storeNumber +
+                ", storePhoneNumber=" + storePhoneNumber +
+                '}';
+    }
 }

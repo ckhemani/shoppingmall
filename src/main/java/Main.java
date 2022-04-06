@@ -7,13 +7,11 @@ import store.DepartmentStore;
 import store.GiftStore;
 import store.Store;
 
+import javax.swing.text.StyledEditorKit;
 import java.lang.reflect.Array;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Scanner;
+import java.util.*;
 
 public class Main {
 
@@ -47,6 +45,8 @@ public class Main {
         // Greetings
         welcomeToMall();
 
+        //Adding Dept Store in StoreList
+
         //Register Store In Mall Database
         registerStoreInMall();
 
@@ -56,76 +56,104 @@ public class Main {
         // Register new Customer and Email ID
         addCustomertoMallDatabase();
   //      registerCustomertoMallDatabase();
+
+        //Add Dept Stores
+        addDeptStore();
+
+
+        System.out.println(tysonCornerMall.getMallCity());
+        System.out.println(tysonCornerMall.getMallName());
+        System.out.println(tysonCornerMall.getMallState());
+        System.out.println(tysonCornerMall.getStore();
     }
 
     public static void welcomeToMall(){
         System.out.println("Welcome to " + tysonCornerMall.getMallName()  + " the Biggest Mall in Virginia");
     }
 
+    public static void addDeptStore(){
+        System.out.println("Enter the Object Name");
+        String objectStoreName = input.next();
+        System.out.println("Enter the dept store you want to name");
+        String deptStoreName = input.next();
+        System.out.println("Enter Floor");
+        int deptStoreFloors = input.nextInt();
+        System.out.println("Enter StoreNumber");
+        int deptStoreNumber = input.nextInt();
+        System.out.println("Phone Number");
+        long deptStorePhone = input.nextLong();
+        System.out.println("Number of Fitting Rooms");
+        int deptFittingRoom = input.nextInt();
+
+        DepartmentStore ObjectStoreName = new DepartmentStore(deptStoreName,deptStoreFloors,deptStoreNumber,deptStorePhone,deptFittingRoom);
+        System.out.println(ObjectStoreName);
+    }
+
     public static void registerStoreInMall(){
         // Adding all stores listed in Mall.
-        HashSet<Store> storeList = new HashSet<>();
+        HashSet<Store> storeList = new LinkedHashSet<>();
         storeList.add(macy);storeList.add(memories);storeList.add(reachAnyWhere);
-        System.out.println(storeList);
+        tysonCornerMall.setStore(storeList);
+        System.out.println(tysonCornerMall.getStore());
 
     }
 
     public static void addEmployeeToMallDatabase(){
 
 
-        ArrayList<Employee> test1234 = new ArrayList<>();
-        test1234.add(employee1);test1234.add(employee2);test1234.add(employee3);
+        ArrayList<Employee> employeeOfStore = new ArrayList<>();
+        employeeOfStore.add(employee1);employeeOfStore.add(employee2);employeeOfStore.add(employee3);
 
-        tysonCornerMall.setEmployee(test1234);
-        System.out.println(tysonCornerMall.getEmployee());
+        tysonCornerMall.setEmployee(employeeOfStore);
+        System.out.println(tysonCornerMall.getEmployee().get(0));
 
     }
 
     public static void addCustomertoMallDatabase(){
-        HashMap<Customer,EmailID> test = new HashMap<>();
-        test.put(cust01,cust01emailID);test.put(cust02,cust02emailID);test.put(cust03,cust03emailID);
+        HashMap<Customer,EmailID> customerVisiting = new HashMap<>();
+        customerVisiting.put(cust01,cust01emailID);customerVisiting.put(cust02,cust02emailID);customerVisiting.put(cust03,cust03emailID);
 
-        tysonCornerMall.setCustomer(test);
-        System.out.println(tysonCornerMall.getCustomer());
+        tysonCornerMall.setCustomer(customerVisiting);
+        System.out.println(tysonCornerMall.getCustomer().get(cust01));
     }
 
-    public static void registerCustomertoMallDatabase() {
-        System.out.println("""
-                add : to add the Customer in Database
-                exit : to exit done with Customer Addition
-                """);
-        String custAction = input.next();
+//    public static void registerCustomertoMallDatabase() {
+//        System.out.println("""
+//                add : to add the Customer in Database
+//                exit : to exit done with Customer Addition
+//                """);
+//        String custAction = input.next();
+//
+//        System.out.println("Please enter the number of Customers to be entered?");
+//        int customerNumbers = input.nextInt();
+//
+//        while (customerNumbers > 0) {
+//            switch (custAction) {
+//                case "add":
+//                    System.out.println("Adding the Customer to Mall Database");
+//                    System.out.println("Please enter your Name");
+//                    String cName = input.next();
+//                    Customer cust = new Customer(cName);
+//
+//                    System.out.println("Please enter your emailID");
+//                    String cEmailID = input.next();
+//                    EmailID custEmailID = new EmailID(cEmailID);
+//
+//                    HashMap<Customer, EmailID> customer = new HashMap<>();
+//                    customer.put(cust, custEmailID);
+//                    System.out.println(customer);
+//                    break;
+//                case "exit":
+//                    System.out.println("Exit it out of this menu");
+//                    break;
+//                default:
+//                    System.out.println("Select either a OR e");
+//                    break;
+//
+//            }
+//            customerNumbers--;
+////            tysonCornerMall.getCustomer();
 
-        System.out.println("Please enter the number of Customers to be entered?");
-        int customerNumbers = input.nextInt();
+//        }
 
-        while (customerNumbers > 0) {
-            switch (custAction) {
-                case "add":
-                    System.out.println("Adding the Customer to Mall Database");
-                    System.out.println("Please enter your Name");
-                    String cName = input.next();
-                    Customer cust = new Customer(cName);
-
-                    System.out.println("Please enter your emailID");
-                    String cEmailID = input.next();
-                    EmailID custEmailID = new EmailID(cEmailID);
-
-                    HashMap<Customer, EmailID> customer = new HashMap<>();
-                    customer.put(cust, custEmailID);
-                    System.out.println(customer);
-                    break;
-                case "exit":
-                    System.out.println("Exit it out of this menu");
-                    break;
-                default:
-                    System.out.println("Select either a OR e");
-                    break;
-
-            }
-            customerNumbers--;
-//            tysonCornerMall.getCustomer();
-
-        }
-    }
 }

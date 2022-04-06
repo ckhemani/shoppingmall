@@ -8,5 +8,22 @@ public class GiftStore extends Store {
         this.occasion = occasion;
     }
 
+    public String getOccasion() {
+        return occasion;
+    }
 
+    public void setOccasion(String occasion) {
+        this.occasion = occasion;
+    }
+
+    @Override
+    public String toString() {
+        return "GiftStore{" +
+                "occasion='" + occasion + '\'' +
+                ", storeName='" + storeName + '\'' +
+                ", storeFloor=" + storeFloor +
+                ", storeNumber=" + storeNumber +
+                ", storePhoneNumber=" + storePhoneNumber +
+                '}';
+    }
 }

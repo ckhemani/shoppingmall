@@ -13,7 +13,7 @@ public class Mall {
     private String mallName;
     private String mallCity;
     private String mallState;
-    private HashSet<Store> store = new HashSet<>();
+    private HashSet<Store> store = new LinkedHashSet<>();
     private ArrayList<Employee> employee = new ArrayList<>();
     private HashMap<Customer, EmailID> customer = new HashMap<>();
 
