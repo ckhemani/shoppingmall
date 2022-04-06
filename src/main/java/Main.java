@@ -9,13 +9,16 @@ import store.Store;
 
 import javax.swing.text.StyledEditorKit;
 import java.lang.reflect.Array;
+import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.*;
 
 public class Main {
 
-    private static final Path mallDatabase = Paths.get(System.getProperty("user.dir") + "\\malldata\\malldetails.txt");
+    private static final Path storeDatabase = Paths.get(System.getProperty("user.dir") + "\\malldata\\stores.txt");
+    private static final Path customerDatabase = Paths.get(System.getProperty("user.dir") + "\\malldata\\customer.txt");
+    private static final Path employeeDatabase = Paths.get(System.getProperty("user.dir") + "\\malldata\\employee.txt");
     private static final Scanner input = new Scanner(System.in);
     private static final Mall tysonCornerMall = new Mall("Tyson Mall","Mclean","VA");
     private static final DepartmentStore macy = new DepartmentStore("Macy",1,101,7770101,2);
@@ -45,7 +48,15 @@ public class Main {
         // Greetings
         welcomeToMall();
 
-        //Adding Dept Store in StoreList
+        // Create Files for Stores, Customer and Employee.
+        createAFileForStore();
+        createAFileForCustomer();
+        createAFileForEmployee();
+
+        //Adding Stores in StoreList
+        addDeptStore();
+        addGiftStore();
+        addCellServiceStore();
 
         //Register Store In Mall Database
         registerStoreInMall();
@@ -72,21 +83,61 @@ public class Main {
     }
 
     public static void addDeptStore(){
-        System.out.println("Enter the Object Name");
-        String objectStoreName = input.next();
-        System.out.println("Enter the dept store you want to name");
-        String deptStoreName = input.next();
-        System.out.println("Enter Floor");
-        int deptStoreFloors = input.nextInt();
-        System.out.println("Enter StoreNumber");
-        int deptStoreNumber = input.nextInt();
-        System.out.println("Phone Number");
-        long deptStorePhone = input.nextLong();
-        System.out.println("Number of Fitting Rooms");
-        int deptFittingRoom = input.nextInt();
+        System.out.println("How many Dept Store you want to add");
+        int numberOfDeptStoretobeadd = input.nextInt();
+        for (int i=0; i< numberOfDeptStoretobeadd;i++) {
+            System.out.println("Enter the Object Name for Department Store");
+            String objectDeptStoreName = input.next();
+            System.out.println("Enter the dept store you want to name");
+            String deptStoreName = input.next();
+            System.out.println("Enter Floor");
+            int deptStoreFloors = input.nextInt();
+            System.out.println("Enter StoreNumber");
+            int deptStoreNumber = input.nextInt();
+            System.out.println("Phone Number");
+            long deptStorePhone = input.nextLong();
+            System.out.println("Number of Fitting Rooms");
+            int deptFittingRoom = input.nextInt();
 
-        DepartmentStore ObjectStoreName = new DepartmentStore(deptStoreName,deptStoreFloors,deptStoreNumber,deptStorePhone,deptFittingRoom);
-        System.out.println(ObjectStoreName);
+            DepartmentStore ObjectDeptStoreName = new DepartmentStore(deptStoreName, deptStoreFloors, deptStoreNumber, deptStorePhone, deptFittingRoom);
+            System.out.println(ObjectDeptStoreName);
+        }
+    }
+
+    public static void addGiftStore(){
+        System.out.println("Enter the Object Name for Gift Store");
+        String objectGiftStoreName = input.next();
+        System.out.println("Enter the Gift store you want to name");
+        String giftStoreName = input.next();
+        System.out.println("Enter Floor");
+        int giftStoreFloors = input.nextInt();
+        System.out.println("Enter StoreNumber");
+        int giftStoreNumber = input.nextInt();
+        System.out.println("Phone Number");
+        long giftStorePhone = input.nextLong();
+        System.out.println("Enter the Occassion it is famous for");
+        String giftOccasion = input.next();
+
+        GiftStore ObjectGiftStoreName = new GiftStore(giftStoreName,giftStoreFloors,giftStoreNumber,giftStorePhone,giftOccasion);
+        System.out.println(ObjectGiftStoreName);
+    }
+
+    public static void addCellServiceStore(){
+        System.out.println("Enter the Object Name for Cell Service Store");
+        String objectCellServiceStoreName = input.next();
+        System.out.println("Enter the Cell Service store you want to name");
+        String cellServiceStoreName = input.next();
+        System.out.println("Enter Floor");
+        int cellServiceStoreFloors = input.nextInt();
+        System.out.println("Enter StoreNumber");
+        int cellServiceStoreNumber = input.nextInt();
+        System.out.println("Phone Number");
+        long cellServiceStorePhone = input.nextLong();
+        System.out.println("Enter the Cell service it provides");
+        String cellServiceprovider = input.next();
+
+        CellServiceStore ObjectcellServiceStoreName = new CellServiceStore(cellServiceStoreName,cellServiceStoreFloors,cellServiceStoreNumber,cellServiceStorePhone,cellServiceprovider);
+        System.out.println(ObjectcellServiceStoreName);
     }
 
     public static void registerStoreInMall(){
@@ -115,6 +166,54 @@ public class Main {
 
         tysonCornerMall.setCustomer(customerVisiting);
         System.out.println(tysonCornerMall.getCustomer().get(cust01));
+    }
+
+    public static void createAFileForStore(){
+        try{
+            Files.createFile(storeDatabase);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void createAFileForCustomer(){
+        try{
+            Files.createFile(storeDatabase);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void createAFileForEmployee(){
+        try{
+            Files.createFile(storeDatabase);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void writeAFileforStore(Object){
+        try{
+            Files.writeString(storeDatabase,);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void writeAFileforCustomer(){
+        try{
+            Files.writeString(customerDatabase,"This is the end my Friend..");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void writeAFileforEmployee(){
+        try{
+            Files.writeString(employeeDatabase,"This is the end my Friend..");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
 //    public static void registerCustomertoMallDatabase() {
