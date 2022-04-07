@@ -1,12 +1,10 @@
 package mall;
 
 import Email.EmailID;
-import Interfaces.IBill;
 import customers.Customer;
 import employee.Employee;
 import store.Store;
 
-import java.lang.reflect.Array;
 import java.util.*;
 
 public class Mall {
@@ -88,6 +86,6 @@ public class Mall {
                 ", store=" + store +
                 ", employee=" + employee +
                 ", customer=" + customer +
-                '}';
+                '}' + "\n";
     }
 }

@@ -29,6 +29,6 @@ public class DepartmentStore extends Store {
                 ", storeFloor=" + storeFloor +
                 ", storeNumber=" + storeNumber +
                 ", storePhoneNumber=" + storePhoneNumber +
-                '}';
+                '}' + "\n";
     }
 }

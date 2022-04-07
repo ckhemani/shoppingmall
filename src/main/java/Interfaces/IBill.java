@@ -1,4 +1,5 @@
 package Interfaces;
 
-public class IBill {
+public interface IBill {
+    billing();
 }

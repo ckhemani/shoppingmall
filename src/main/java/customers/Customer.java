@@ -2,25 +2,24 @@ package customers;
 
 
 public class Customer {
-        String CustomerName;
+        String customerName;
 
         public Customer(String customerName) {
-                CustomerName = customerName;
+                this.customerName = customerName;
         }
 
         public String getCustomerName() {
-                return CustomerName;
+                return customerName;
         }
 
         public void setCustomerName(String customerName) {
-                CustomerName = customerName;
+                this.customerName = customerName;
         }
 
         @Override
         public String toString() {
                 return "Customer{" +
-                        "CustomerName='" + CustomerName + '\'' +
+                        "customerName='" + customerName + '\'' +
                         '}';
         }
 }
-

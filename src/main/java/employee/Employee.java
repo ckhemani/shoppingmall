@@ -40,10 +40,10 @@ public class Employee {
 
     @Override
     public String toString() {
-        return "Name: " + employeeName + "\n";
-//                "employeeName='" + employeeName + '\'' +
-//                ", employeeUserID='" + employeeUserID + '\'' +
-//                ", employeePassword='" + employeePassword + '\'' +
-//                '}';
+        return  "Employee{" +
+                "employeeName='" + employeeName + '\'' +
+                ", employeeUserID='" + employeeUserID + '\'' +
+                ", employeePassword='" + employeePassword + '\'' +
+                '}' + "\n";
     }
 }

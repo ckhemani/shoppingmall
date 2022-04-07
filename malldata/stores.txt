@@ -1,0 +1,8 @@
+testtesttest 
+test 
+Tyson MallTyson MallTyson Mall
+[DepartmentStore{fittingRooms=1, storeName='1', storeFloor=1, storeNumber=1, storePhoneNumber=1}]
+[DepartmentStore{fittingRooms=11, storeName='1', storeFloor=1, storeNumber=1, storePhoneNumber=1}][DepartmentStore{fittingRooms=1, storeName='1', storeFloor=1, storeNumber=1, storePhoneNumber=1}][DepartmentStore{fittingRooms=1, storeName='1', storeFloor=1, storeNumber=1, storePhoneNumber=1}][GiftStore{occasion='1', storeName='1', storeFloor=1, storeNumber=1, storePhoneNumber=1}][DepartmentStore{fittingRooms=1, storeName='1', storeFloor=1, storeNumber=1, storePhoneNumber=1}][DepartmentStore{fittingRooms=1, storeName='test', storeFloor=1, storeNumber=1, storePhoneNumber=1}][GiftStore{occasion='1', storeName='test', storeFloor=1, storeNumber=1, storePhoneNumber=1}][DepartmentStore{fittingRooms=1, storeName='1', storeFloor=1, storeNumber=1, storePhoneNumber=1}][DepartmentStore{fittingRooms=1, storeName='1', storeFloor=1, storeNumber=1, storePhoneNumber=1}][DepartmentStore{fittingRooms=1, storeName='1', storeFloor=1, storeNumber=1, storePhoneNumber=1}][DepartmentStore{fittingRooms=1, storeName='macyu', storeFloor=1, storeNumber=1, storePhoneNumber=1}
+][CellServiceStore{cellService='1', storeName='verizon', storeFloor=1, storeNumber=1, storePhoneNumber=1}][DepartmentStore{fittingRooms=1, storeName='Macy', storeFloor=1, storeNumber=1, storePhoneNumber=1}
+][DepartmentStore{fittingRooms=1, storeName='test', storeFloor=1, storeNumber=1, storePhoneNumber=1}
+][GiftStore{occasion='1', storeName='gif', storeFloor=1, storeNumber=1, storePhoneNumber=1}]
