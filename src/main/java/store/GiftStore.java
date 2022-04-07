@@ -28,6 +28,6 @@ public class GiftStore extends Store {
                 ", storeFloor=" + storeFloor +
                 ", storeNumber=" + storeNumber +
                 ", storePhoneNumber=" + storePhoneNumber +
-                '}';
+                '}' + "\n";
     }
 }

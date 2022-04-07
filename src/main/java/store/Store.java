@@ -67,6 +67,6 @@ public class Store {
                 ", storeFloor=" + storeFloor +
                 ", storeNumber=" + storeNumber +
                 ", storePhoneNumber=" + storePhoneNumber +
-                '}';
+                '}' + "\n";
     }
 }

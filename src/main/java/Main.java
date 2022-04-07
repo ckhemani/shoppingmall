@@ -18,6 +18,7 @@ public class Main {
     private static final Path storeDatabase = Paths.get(System.getProperty("user.dir") + "\\malldata\\stores.txt");
     private static final Path customerDatabase = Paths.get(System.getProperty("user.dir") + "\\malldata\\customer.txt");
     private static final Path employeeDatabase = Paths.get(System.getProperty("user.dir") + "\\malldata\\employee.txt");
+    private static final Path mallDatabase = Paths.get(System.getProperty("user.dir") + "\\malldata\\mall.txt");
 
     // Global Scanner for int, String ....
     private static final Scanner input = new Scanner(System.in);
@@ -31,10 +32,11 @@ public class Main {
         // Greetings
         welcomeToMall();
 
-        // Create File for Store Database
+        // Create File for Store,Employee,Customer and Mall Database
         createAFileForStore();
         createAFileForEmployee();
         createAFileForCustomer();
+        createAFileForMall();
 
         //Adding Stores in StoreDatabase and writing to stores.txt file
         System.out.println("Please enter the Number of Store to be added");
@@ -59,6 +61,9 @@ public class Main {
         System.out.println(tysonCornerMall);
 
         writeAFileForCustomer();
+
+        //Create Mall Database
+        writeAFileForMall();
     }
 
     public static void welcomeToMall() {
@@ -95,6 +100,16 @@ public class Main {
         }
     }
 
+    public static void createAFileForMall() {
+        try {
+            if (Files.notExists(mallDatabase)) {
+                Files.createFile(mallDatabase);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
     public static HashSet<Store> storeToBeAddedInMallDatabase(int numberOfStoresToBeAddedInMall) {
         HashSet<Store> storeList = new LinkedHashSet<>();
         while (numberOfStoresToBeAddedInMall > 0) {
@@ -102,8 +117,8 @@ public class Main {
             String selectStore = input.next();
 
             try {
-                int i = Integer.parseInt(selectStore);
-                System.out.println("Valid Input");
+                int seeWhereInputisInt = Integer.parseInt(selectStore);
+                System.out.println("Valid Input in int");
             } catch (NumberFormatException e) {
                 System.out.println("Input is not valid int. Please try again");
             }
@@ -145,13 +160,15 @@ public class Main {
         int deptFittingRoom = input.nextInt();
 
         DepartmentStore ObjectDeptStoreName = new DepartmentStore(deptStoreName, deptStoreFloors, deptStoreNumber, deptStorePhone, deptFittingRoom);
+        ObjectDeptStoreName.storeDetails();
+
         return ObjectDeptStoreName;
     }
 
     public static Store addGiftStore() {
-        System.out.println("Enter the Object Name for Department Store");
+        System.out.println("Enter the Object Name for Gift Store");
         String objectGiftStoreName = input.next();
-        System.out.println("Enter the dept store you want to name");
+        System.out.println("Enter the gift store you want to name");
         String giftStoreName = input.next();
         System.out.println("Enter Floor");
         int giftStoreFloors = input.nextInt();
@@ -159,10 +176,12 @@ public class Main {
         int giftStoreNumber = input.nextInt();
         System.out.println("Phone Number");
         long giftStorePhone = input.nextLong();
-        System.out.println("Number of Fitting Rooms");
+        System.out.println("Occasion it is famous for");
         String giftOccasion = input.next();
 
         GiftStore ObjectGiftStoreName = new GiftStore(giftStoreName, giftStoreFloors, giftStoreNumber, giftStorePhone, giftOccasion);
+        ObjectGiftStoreName.storeDetails();
+
         return ObjectGiftStoreName;
     }
 
@@ -180,6 +199,8 @@ public class Main {
         System.out.println("Enter the Cell service it provides");
         String cellServiceprovider = input.next();
         CellServiceStore ObjectcellServiceStoreName = new CellServiceStore(cellServiceStoreName, cellServiceStoreFloors, cellServiceStoreNumber, cellServiceStorePhone, cellServiceprovider);
+        ObjectcellServiceStoreName.storeDetails();
+
         return ObjectcellServiceStoreName;
     }
 
@@ -206,7 +227,6 @@ public class Main {
         Employee myObjectEmployeeName = new Employee(myemployeeName, myemployeeUserID, myemployeePassword);
         employeeList.add(myObjectEmployeeName);
         return employeeList;
-
     }
 
     public static void writeAFileForEmployee() {
@@ -242,4 +262,15 @@ public class Main {
             e.printStackTrace();
         }
     }
+
+    public static void writeAFileForMall() {
+        try {
+            String MallToAdd = String.valueOf(tysonCornerMall);
+            Files.writeString(mallDatabase, MallToAdd, StandardOpenOption.APPEND, StandardOpenOption.CREATE);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+
 }

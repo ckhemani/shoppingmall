@@ -1,0 +1,3 @@
+Mall{mallName='Tyson Mall', mallCity='Mclean', mallState='VA', store=[DepartmentStore{fittingRooms=4, storeName='macy', storeFloor=1, storeNumber=2, storePhoneNumber=3}
+], employee=[Employee{employeeName='chand', employeeUserID='chand', employeePassword='chand'}
+], customer={Customer{customerName='atal'}=EmailID{emailID='atal'}}}
