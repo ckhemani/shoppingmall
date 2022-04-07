@@ -56,7 +56,9 @@ public class Store {
 
 
     // Methods
-
+    public void storeDetails(){
+        System.out.println("I am Store in Mall");
+    }
 
     @Override
     public String toString() {

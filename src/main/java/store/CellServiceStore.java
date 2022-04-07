@@ -17,6 +17,10 @@ public class CellServiceStore extends Store{
         this.cellService = cellService;
     }
 
+    public void storeDetails(){
+        System.out.println("I am CellService Store in Mall");
+    }
+
     @Override
     public String toString() {
         return "CellServiceStore{" +

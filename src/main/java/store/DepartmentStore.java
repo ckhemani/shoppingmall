@@ -17,6 +17,10 @@ public class DepartmentStore extends Store {
         this.fittingRooms = fittingRooms;
     }
 
+    public void storeDetails(){
+        System.out.println("I am Dept Store in Mall");
+    }
+
     @Override
     public String toString() {
         return "DepartmentStore{" +

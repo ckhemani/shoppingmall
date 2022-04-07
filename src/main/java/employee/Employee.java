@@ -5,6 +5,9 @@ public class Employee {
     private String employeeUserID;
     private String employeePassword;
 
+    public Employee() {
+    }
+
     public Employee(String employeeName, String employeeUserID, String employeePassword) {
         this.employeeName = employeeName;
         this.employeeUserID = employeeUserID;
@@ -37,10 +40,10 @@ public class Employee {
 
     @Override
     public String toString() {
-        return "Employee{" +
-                "employeeName='" + employeeName + '\'' +
-                ", employeeUserID='" + employeeUserID + '\'' +
-                ", employeePassword='" + employeePassword + '\'' +
-                '}';
+        return "Name: " + employeeName + "\n";
+//                "employeeName='" + employeeName + '\'' +
+//                ", employeeUserID='" + employeeUserID + '\'' +
+//                ", employeePassword='" + employeePassword + '\'' +
+//                '}';
     }
 }

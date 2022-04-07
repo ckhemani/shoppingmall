@@ -16,6 +16,10 @@ public class GiftStore extends Store {
         this.occasion = occasion;
     }
 
+    public void storeDetails(){
+        System.out.println("I am Gift Store in Mall");
+    }
+
     @Override
     public String toString() {
         return "GiftStore{" +

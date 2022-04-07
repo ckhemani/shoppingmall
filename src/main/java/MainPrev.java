@@ -13,17 +13,16 @@ import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
 import java.util.*;
 
-public class Main {
+public class MainPrev {
+
     private static final Path storeDatabase = Paths.get(System.getProperty("user.dir") + "\\malldata\\stores.txt");
     private static final Path customerDatabase = Paths.get(System.getProperty("user.dir") + "\\malldata\\customer.txt");
     private static final Path employeeDatabase = Paths.get(System.getProperty("user.dir") + "\\malldata\\employee.txt");
-
     private static final Scanner input = new Scanner(System.in);
-
-    private static final Mall tysonCornerMall = new Mall("Tyson Mall", "Mclean", "VA");
-    private static final DepartmentStore macy = new DepartmentStore("Macy", 1, 101, 7770101, 2);
-    private static final GiftStore memories = new GiftStore("Memories", 2, 202, 7770202, "anything");
-    private static final CellServiceStore reachAnyWhere = new CellServiceStore("ReachAnywhere", 3, 303, 7770303, "Verizon");
+    private static final Mall tysonCornerMall = new Mall("Tyson Mall","Mclean","VA");
+    private static final DepartmentStore macy = new DepartmentStore("Macy",1,101,7770101,2);
+    private static final GiftStore memories = new GiftStore("Memories",2,202,7770202,"anything");
+    private static final CellServiceStore reachAnyWhere = new CellServiceStore("ReachAnywhere",3,303,7770303,"Verizon");
 
     private static final Customer cust01 = new Customer("cust01");
     private static final Customer cust02 = new Customer("cust02");
@@ -80,14 +79,14 @@ public class Main {
 //
 //        writeAFileforEmployee(testEmployee);
 
-        Employee employee1 = new Employee("Chandru1", "ck1234", "ck123456");
-        Employee employee2 = new Employee("Chandru2", "ck1234", "ck123456");
-        //  StandardOpenOption.APPEND, StandardOpenOption.CREATE
+          Employee employee1 = new Employee("Chandru1","ck1234","ck123456");
+          Employee employee2 = new Employee("Chandru2","ck1234","ck123456");
+      //  StandardOpenOption.APPEND, StandardOpenOption.CREATE
     }
 
 
-    public static Employee employeeData(String name, String userID, String password) {
-        //       public static Employee employeeData(String name,String userID, String password){
+    public static Employee employeeData(String name,String userID, String password){
+ //       public static Employee employeeData(String name,String userID, String password){
 
         Employee employees = new Employee(name, userID, password);
 
@@ -97,28 +96,27 @@ public class Main {
         return employees;
 
         //method to add employee to File
-        //     createAFileForEmployee();
+   //     createAFileForEmployee();
 
     }
 
-    public static void createAFileForEmployee() {
-        try {
+    public static void createAFileForEmployee(){
+        try{
             Files.createFile(employeeDatabase);
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
-
-    public static void writeAFileforEmployee(ArrayList<Employee> employee) {
-        try {
-            Files.writeString(employeeDatabase, employee.toString(), StandardOpenOption.APPEND, StandardOpenOption.CREATE);
+    public static void writeAFileforEmployee(ArrayList<Employee> employee){
+        try{
+            Files.writeString(employeeDatabase,employee.toString(),StandardOpenOption.APPEND, StandardOpenOption.CREATE);
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
-    public static void welcomeToMall() {
-        System.out.println("Welcome to " + tysonCornerMall.getMallName() + " the Biggest Mall in Virginia");
+    public static void welcomeToMall(){
+        System.out.println("Welcome to " + tysonCornerMall.getMallName()  + " the Biggest Mall in Virginia");
     }
 
 //    public static void addDeptStore(){
@@ -179,33 +177,29 @@ public class Main {
 //        System.out.println(ObjectcellServiceStoreName);
 //    }
 
-    public static void registerStoreInMall() {
+    public static void registerStoreInMall(){
         // Adding all stores listed in Mall.
         HashSet<Store> storeList = new LinkedHashSet<>();
-        storeList.add(macy);
-        storeList.add(memories);
-        storeList.add(reachAnyWhere);
+        storeList.add(macy);storeList.add(memories);storeList.add(reachAnyWhere);
         tysonCornerMall.setStore(storeList);
         System.out.println(tysonCornerMall.getStore());
 
     }
 
-    public static void addEmployeeToMallDatabase() {
+    public static void addEmployeeToMallDatabase(){
 
 
         ArrayList<Employee> employeeOfStore = new ArrayList<>();
-        // employeeOfStore.add(employee1);employeeOfStore.add(employee2);employeeOfStore.add(employee3);
+       // employeeOfStore.add(employee1);employeeOfStore.add(employee2);employeeOfStore.add(employee3);
 
         tysonCornerMall.setEmployee(employeeOfStore);
         System.out.println(tysonCornerMall.getEmployee().get(0));
 
     }
 
-    public static void addCustomertoMallDatabase() {
-        HashMap<Customer, EmailID> customerVisiting = new HashMap<>();
-        customerVisiting.put(cust01, cust01emailID);
-        customerVisiting.put(cust02, cust02emailID);
-        customerVisiting.put(cust03, cust03emailID);
+    public static void addCustomertoMallDatabase(){
+        HashMap<Customer,EmailID> customerVisiting = new HashMap<>();
+        customerVisiting.put(cust01,cust01emailID);customerVisiting.put(cust02,cust02emailID);customerVisiting.put(cust03,cust03emailID);
 
         tysonCornerMall.setCustomer(customerVisiting);
         System.out.println(tysonCornerMall.getCustomer().get(cust01));
