@@ -5,4 +5,4 @@
 , DepartmentStore{fittingRooms=1, storeName='sears', storeFloor=5, storeNumber=501, storePhoneNumber=501}
 ], employee=[Employee{employeeName='chand', employeeUserID='chand', employeePassword='chand'}
 ], customer={Customer{customerName='atal'}=EmailID{emailID='atal'}}}
-{Customer{customerName='atal'}=EmailID{emailID='atal'}}
+{Customer{customerName='atal'}=EmailID{emailID='atal'}}{Customer{customerName='test'}=EmailID{emailID='test'}}{Customer{customerName='atal'}=EmailID{emailID='atal'}}{Customer{customerName='chand'}=EmailID{emailID='chand'}}{Customer{customerName='1'}=EmailID{emailID='1'}}{Customer{customerName='1'}=EmailID{emailID='1'}}{Customer{customerName='chand'}=EmailID{emailID='chand'}}{Customer{customerName='12'}=EmailID{emailID='12'}}{Customer{customerName='1'}=EmailID{emailID='1'}}{Customer{customerName='1'}=EmailID{emailID='1'}}{Customer{customerName='atal'}=EmailID{emailID='atal'}}

@@ -20,6 +20,7 @@ public class GiftStore extends Store {
         System.out.println("I am Gift Store in Mall");
     }
 
+
     @Override
     public String toString() {
         return "GiftStore{" +

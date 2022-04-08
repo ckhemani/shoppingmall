@@ -77,6 +77,12 @@ public class Mall {
         this.customer = customer;
     }
 
+    // Methods
+
+    public void cart(){
+        System.out.println("Please add items in your Card");
+    }
+
     @Override
     public String toString() {
         return "Mall{" +

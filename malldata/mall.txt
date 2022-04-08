@@ -1,3 +1,28 @@
 Mall{mallName='Tyson Mall', mallCity='Mclean', mallState='VA', store=[DepartmentStore{fittingRooms=4, storeName='macy', storeFloor=1, storeNumber=2, storePhoneNumber=3}
 ], employee=[Employee{employeeName='chand', employeeUserID='chand', employeePassword='chand'}
 ], customer={Customer{customerName='atal'}=EmailID{emailID='atal'}}}
+Mall{mallName='Tyson Mall', mallCity='Mclean', mallState='VA', store=[DepartmentStore{fittingRooms=101, storeName='target', storeFloor=101, storeNumber=101, storePhoneNumber=101}
+], employee=[Employee{employeeName='chand', employeeUserID='chand', employeePassword='chand'}
+], customer={Customer{customerName='test'}=EmailID{emailID='test'}}}
+Mall{mallName='Tyson Mall', mallCity='Mclean', mallState='VA', store=[DepartmentStore{fittingRooms=1, storeName='h', storeFloor=1, storeNumber=1, storePhoneNumber=1}
+], employee=[Employee{employeeName='chand', employeeUserID='chand', employeePassword='chand'}
+], customer={Customer{customerName='atal'}=EmailID{emailID='atal'}}}
+Mall{mallName='Tyson Mall', mallCity='Mclean', mallState='VA', store=[DepartmentStore{fittingRooms=1, storeName='Macy', storeFloor=1, storeNumber=1, storePhoneNumber=1}
+], employee=[Employee{employeeName='chand', employeeUserID='chand', employeePassword='chand'}
+], customer={Customer{customerName='chand'}=EmailID{emailID='chand'}}}
+Mall{mallName='Tyson Mall', mallCity='Mclean', mallState='VA', store=[DepartmentStore{fittingRooms=1, storeName='1', storeFloor=1, storeNumber=1, storePhoneNumber=1}
+], employee=[Employee{employeeName='1', employeeUserID='1', employeePassword='1'}
+], customer={Customer{customerName='1'}=EmailID{emailID='1'}}}
+Mall{mallName='Tyson Mall', mallCity='Mclean', mallState='VA', store=[CellServiceStore{cellService='1', storeName='1', storeFloor=1, storeNumber=1, storePhoneNumber=1}
+], employee=[Employee{employeeName='1', employeeUserID='1', employeePassword='1'}
+], customer={Customer{customerName='1'}=EmailID{emailID='1'}}}
+Mall{mallName='Tyson Mall', mallCity='Mclean', mallState='VA', store=[CellServiceStore{cellService='1', storeName='verion', storeFloor=1, storeNumber=1, storePhoneNumber=1}
+], employee=[Employee{employeeName='chand', employeeUserID='chand', employeePassword='chand'}
+], customer={Customer{customerName='chand'}=EmailID{emailID='chand'}}}
+Mall{mallName='Tyson Mall', mallCity='Mclean', mallState='VA', store=[DepartmentStore{fittingRooms=12, storeName='12', storeFloor=12, storeNumber=12, storePhoneNumber=12}
+], employee=[Employee{employeeName='12', employeeUserID='12', employeePassword='12'}
+], customer={Customer{customerName='12'}=EmailID{emailID='12'}}}
+Mall{mallName='Tyson Mall', mallCity='Mclean', mallState='VA', store=[], employee=[Employee{employeeName='1', employeeUserID='1', employeePassword='1'}
+], customer={Customer{customerName='1'}=EmailID{emailID='1'}}}
+Mall{mallName='Tyson Mall', mallCity='Mclean', mallState='VA', store=[], employee=[Employee{employeeName='1', employeeUserID='1', employeePassword='11'}
+], customer={Customer{customerName='1'}=EmailID{emailID='1'}}}

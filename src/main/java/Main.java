@@ -7,6 +7,7 @@ import store.DepartmentStore;
 import store.GiftStore;
 import store.Store;
 
+import javax.management.StringValueExp;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -23,11 +24,14 @@ public class Main {
     // Global Scanner for int, String ....
     private static final Scanner input = new Scanner(System.in);
 
-    // Creating Mall Object and also Store Objects
+    // Creating Mall Object
     private static final Mall tysonCornerMall = new Mall("Tyson Mall", "Mclean", "VA");
 
+    private static final DepartmentStore test01 = new DepartmentStore("test01",1,101,12121,1);
 
     public static void main(String[] args) {
+
+        test01.item();
 
         // Greetings
         welcomeToMall();
@@ -38,32 +42,49 @@ public class Main {
         createAFileForCustomer();
         createAFileForMall();
 
-        //Adding Stores in StoreDatabase and writing to stores.txt file
-        System.out.println("Please enter the Number of Store to be added");
-        int storeToBeAddedInMall = input.nextInt();
-        System.out.println("You have selected " + storeToBeAddedInMall + " to be added in Mall Database");
+        while(true) {
+            System.out.println("""
+                    Please enter choice what you want to do?
+                    A. To add Store in Mall Database
+                    B. To add Employee to Mall Database
+                    C. To add Customer to Mall Database
+                    D. To Read all Files created  
+                    Z. Exit the Menu""");
 
-        tysonCornerMall.setStore(storeToBeAddedInMallDatabase(storeToBeAddedInMall));
-        System.out.println(tysonCornerMall.getStore());
-
-        writeAFileForStore();
-
-        //Adding Store Employees in EmployeeDatabase and writing to employee.txt file
-        tysonCornerMall.setEmployee(addEmployee());
-        System.out.println(tysonCornerMall.getEmployee());
-
-        writeAFileForEmployee();
-
-        //Adding Visting Customer in CustomerDatabase and Writing to Customer.txt file
-        tysonCornerMall.setCustomer(addCustomerandEmailID());
-        System.out.println(tysonCornerMall.getCustomer());
-
-        System.out.println(tysonCornerMall);
-
-        writeAFileForCustomer();
-
-        //Create Mall Database
-        writeAFileForMall();
+            String choice = input.next();
+            switch (choice) {
+                case "A":
+                    //Adding Stores in StoreDatabase and writing to stores.txt file
+                    System.out.println("Please enter the Number of Store to be added");
+                    int storeToBeAddedInMall = input.nextInt();
+                    System.out.println("You have selected " + storeToBeAddedInMall + " to be added in Mall Database");
+                    tysonCornerMall.setStore(storeToBeAddedInMallDatabase(storeToBeAddedInMall));
+                    System.out.println(tysonCornerMall.getStore());
+                    writeAFileForStore();
+                    break;
+                case "B":
+                    //Adding Store Employees in EmployeeDatabase and writing to employee.txt file
+                    tysonCornerMall.setEmployee(addEmployee());
+                    System.out.println(tysonCornerMall.getEmployee());
+                    writeAFileForEmployee();
+                    break;
+                case "C":
+                    //Adding Visting Customer in CustomerDatabase and Writing to Customer.txt file
+                    tysonCornerMall.setCustomer(addCustomerandEmailID());
+                    System.out.println(tysonCornerMall.getCustomer());
+                    System.out.println(tysonCornerMall);
+                    writeAFileForCustomer();
+                    break;
+                case "D":
+                    //Read all Files
+                    readAllFiles();
+                    break;
+                case "Z":
+                    System.exit(0);
+                default:
+                    System.out.println("Please select choice A-E");
+            }
+        }
     }
 
     public static void welcomeToMall() {
@@ -113,7 +134,12 @@ public class Main {
     public static HashSet<Store> storeToBeAddedInMallDatabase(int numberOfStoresToBeAddedInMall) {
         HashSet<Store> storeList = new LinkedHashSet<>();
         while (numberOfStoresToBeAddedInMall > 0) {
-            System.out.println("Please enter 1 to add Dept Store, 2 to add Gift Store, 3 to add CellService Store. ");
+            System.out.println("""
+            1 to add Dept Store.
+            2 to add Gift Store.
+            3 to add CellService Store.
+            10 to exit of Switch loop
+            """);
             String selectStore = input.next();
 
             try {
@@ -136,6 +162,9 @@ public class Main {
                     System.out.println("adding the Cell Service Store in Mall Database");
                     storeList.add(addCellServiceStore());
                     break;
+                case "10":
+                    System.out.println("Exit from While Loop");
+                    numberOfStoresToBeAddedInMall = 0;
                 default:
                     numberOfStoresToBeAddedInMall++;
                     break;
@@ -272,5 +301,20 @@ public class Main {
         }
     }
 
+    public static void readAllFiles(){
+        String tempMall; String tempCustomer;String tempEmployee;String tempStore;
+        try{
+            tempMall = Files.readString(mallDatabase);
+            System.out.println("reading Mall Database " + "\n" + tempMall);
+            tempCustomer = Files.readString(customerDatabase);
+            System.out.println("reading Customer Database " + "\n" +tempCustomer);
+            tempEmployee = Files.readString(employeeDatabase);
+            System.out.println("reading Employee Database " + "\n" +tempEmployee);
+            tempStore = Files.readString(storeDatabase);
+            System.out.println("reading Store Database " + "\n" + tempStore);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 
 }

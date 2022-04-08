@@ -1,6 +1,8 @@
 package store;
 
-public class DepartmentStore extends Store {
+import Interfaces.Items;
+
+public class DepartmentStore extends Store implements Items {
     int fittingRooms;
 
 
@@ -30,5 +32,12 @@ public class DepartmentStore extends Store {
                 ", storeNumber=" + storeNumber +
                 ", storePhoneNumber=" + storePhoneNumber +
                 '}' + "\n";
+    }
+
+    @Override
+    public void item() {
+        System.out.println("This is Item Interface for Dept Store");
+        String[] clothes = {"test","test1","test3"};
+        System.out.println(clothes[0]);
     }
 }
