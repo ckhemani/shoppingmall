@@ -26,11 +26,13 @@ public class Main {
     // Creating Mall Object
     private static final Mall tysonCornerMall = new Mall("Tyson Mall", "Mclean", "VA");
 
-    private static final DepartmentStore test01 = new DepartmentStore("test01",1,101,12121,1);
+//    private static final DepartmentStore test01 = new DepartmentStore("test01",1,101,12121,1);
+//    private static final CellServiceStore test02 = new CellServiceStore("test02",2,202,12121,"Verizon");
 
     public static void main(String[] args) {
 
-        test01.item();
+//        test01.item();
+//        test02.item();
 
         // Greetings
         welcomeToMall();

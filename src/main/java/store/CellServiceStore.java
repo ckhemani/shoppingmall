@@ -1,6 +1,8 @@
 package store;
 
-public class CellServiceStore extends Store{
+import Interfaces.Items;
+
+public class CellServiceStore extends Store implements Items {
     String cellService;
 
 
@@ -30,5 +32,10 @@ public class CellServiceStore extends Store{
                 ", storeNumber=" + storeNumber +
                 ", storePhoneNumber=" + storePhoneNumber +
                 '}' + "\n";
+    }
+
+    @Override
+    public void item() {
+        System.out.println("This is Cell Service Items");
     }
 }

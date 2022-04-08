@@ -1,6 +1,8 @@
 package store;
 
-public class GiftStore extends Store {
+import Interfaces.Items;
+
+public class GiftStore extends Store implements Items {
     String occasion;
 
     public GiftStore(String storeName, int storeFloor, int storeNumber, long storePhoneNumber, String occasion) {
@@ -30,5 +32,10 @@ public class GiftStore extends Store {
                 ", storeNumber=" + storeNumber +
                 ", storePhoneNumber=" + storePhoneNumber +
                 '}' + "\n";
+    }
+
+    @Override
+    public void item() {
+        System.out.println("This is Gift Store Items");
     }
 }

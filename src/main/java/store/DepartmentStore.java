@@ -2,6 +2,8 @@ package store;
 
 import Interfaces.Items;
 
+import java.util.HashMap;
+
 public class DepartmentStore extends Store implements Items {
     int fittingRooms;
 
@@ -34,10 +36,9 @@ public class DepartmentStore extends Store implements Items {
                 '}' + "\n";
     }
 
+
     @Override
     public void item() {
-        System.out.println("This is Item Interface for Dept Store");
-        String[] clothes = {"test","test1","test3"};
-        System.out.println(clothes[0]);
+        System.out.println("This is Dept Store Items");
     }
 }
