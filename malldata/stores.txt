@@ -28,4 +28,5 @@
 ][][][DepartmentStore{fittingRooms=1, storeName='JCPENNY', storeFloor=1, storeNumber=101, storePhoneNumber=10101010}
 ][DepartmentStore{fittingRooms=12, storeName='nnn', storeFloor=1, storeNumber=101, storePhoneNumber=12}
 , GiftStore{occasion='christmas', storeName='dd', storeFloor=1, storeNumber=101, storePhoneNumber=121}
+][DepartmentStore{fittingRooms=1, storeName='MACY', storeFloor=1, storeNumber=101, storePhoneNumber=12121}
 ]
