@@ -7,7 +7,6 @@ import store.DepartmentStore;
 import store.GiftStore;
 import store.Store;
 
-import javax.management.StringValueExp;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -48,7 +47,7 @@ public class Main {
                     A. To add Store in Mall Database
                     B. To add Employee to Mall Database
                     C. To add Customer to Mall Database
-                    D. To Read all Files created  
+                    Y. To Read all Files created  
                     Z. Exit the Menu""");
 
             String choice = input.next();
@@ -75,7 +74,7 @@ public class Main {
                     System.out.println(tysonCornerMall);
                     writeAFileForCustomer();
                     break;
-                case "D":
+                case "Y":
                     //Read all Files
                     readAllFiles();
                     break;
