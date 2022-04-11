@@ -2,8 +2,11 @@ package store;
 
 import Interfaces.Items;
 
+import java.util.Scanner;
+
 public class GiftStore extends Store implements Items {
-    String occasion;
+    private String occasion;
+    Scanner scan = new Scanner(System.in);
 
     public GiftStore(String storeName, int storeFloor, int storeNumber, long storePhoneNumber, String occasion) {
         super(storeName, storeFloor, storeNumber, storePhoneNumber);
@@ -27,10 +30,10 @@ public class GiftStore extends Store implements Items {
     public String toString() {
         return "GiftStore{" +
                 "occasion='" + occasion + '\'' +
-                ", storeName='" + storeName + '\'' +
-                ", storeFloor=" + storeFloor +
-                ", storeNumber=" + storeNumber +
-                ", storePhoneNumber=" + storePhoneNumber +
+                ", storeName='" + getStoreName() + '\'' +
+                ", storeFloor=" + getStoreFloor()+
+                ", storeNumber=" + getStoreName() +
+                ", storePhoneNumber=" + getStorePhoneNumber() +
                 '}' + "\n";
     }
 

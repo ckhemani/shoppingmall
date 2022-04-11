@@ -2,10 +2,10 @@ package store;
 
 public class Store {
     // Fields
-    String storeName;
-    int storeFloor;
-    int storeNumber;
-    long storePhoneNumber;
+    private String storeName;
+    private int storeFloor;
+    private int storeNumber;
+    private long storePhoneNumber;
 
     // Constructor with No Parameters
     public Store() {

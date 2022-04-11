@@ -3,7 +3,7 @@ package store;
 import Interfaces.Items;
 
 public class CellServiceStore extends Store implements Items {
-    String cellService;
+    private String cellService;
 
 
     public CellServiceStore(String storeName, int storeFloor, int storeNumber, long storePhoneNumber, String cellService) {
@@ -27,10 +27,10 @@ public class CellServiceStore extends Store implements Items {
     public String toString() {
         return "CellServiceStore{" +
                 "cellService='" + cellService + '\'' +
-                ", storeName='" + storeName + '\'' +
-                ", storeFloor=" + storeFloor +
-                ", storeNumber=" + storeNumber +
-                ", storePhoneNumber=" + storePhoneNumber +
+                ", storeName='" + getStoreName() + '\'' +
+                ", storeFloor=" + getStoreFloor()+
+                ", storeNumber=" + getStoreName() +
+                ", storePhoneNumber=" + getStorePhoneNumber() +
                 '}' + "\n";
     }
 
