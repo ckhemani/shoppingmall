@@ -7,7 +7,7 @@ import java.util.Scanner;
 
 public class DepartmentStore extends Store implements Items {
     private int fittingRooms;
-    Scanner scan = new Scanner(System.in);
+    Scanner deptScanner = new Scanner(System.in);
 
     public DepartmentStore(String storeName, int storeFloor, int storeNumber, long storePhoneNumber, int fittingRooms) {
         super(storeName, storeFloor, storeNumber, storePhoneNumber);
@@ -44,7 +44,7 @@ public class DepartmentStore extends Store implements Items {
         HashMap<String, Double> deptItems = new HashMap<>();
         deptItems.put("Pant",9.99);deptItems.put("Shirt",7.99);
         System.out.println("Please print the Items purchased by Customer");
-        String deptItemsPurchased = scan.next();
+        String deptItemsPurchased = deptScanner.next();
         deptItems.get(deptItemsPurchased);
     }
 }
