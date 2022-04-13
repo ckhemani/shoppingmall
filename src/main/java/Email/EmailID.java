@@ -1,7 +1,7 @@
 package Email;
 
 public class EmailID {
-    String emailID;
+    private String emailID;
 
     public EmailID(String emailID) {
         this.emailID = emailID;

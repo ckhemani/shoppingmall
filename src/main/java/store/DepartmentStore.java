@@ -3,10 +3,11 @@ package store;
 import Interfaces.Items;
 
 import java.util.HashMap;
+import java.util.Scanner;
 
 public class DepartmentStore extends Store implements Items {
-    int fittingRooms;
-
+    private int fittingRooms;
+    Scanner scan = new Scanner(System.in);
 
     public DepartmentStore(String storeName, int storeFloor, int storeNumber, long storePhoneNumber, int fittingRooms) {
         super(storeName, storeFloor, storeNumber, storePhoneNumber);
@@ -29,10 +30,10 @@ public class DepartmentStore extends Store implements Items {
     public String toString() {
         return "DepartmentStore{" +
                 "fittingRooms=" + fittingRooms +
-                ", storeName='" + storeName + '\'' +
-                ", storeFloor=" + storeFloor +
-                ", storeNumber=" + storeNumber +
-                ", storePhoneNumber=" + storePhoneNumber +
+                ", storeName='" + getStoreName() + '\'' +
+                ", storeFloor=" + getStoreFloor()+
+                ", storeNumber=" + getStoreName() +
+                ", storePhoneNumber=" + getStorePhoneNumber() +
                 '}' + "\n";
     }
 
@@ -40,5 +41,10 @@ public class DepartmentStore extends Store implements Items {
     @Override
     public void item() {
         System.out.println("This is Dept Store Items");
+        HashMap<String, Double> deptItems = new HashMap<>();
+        deptItems.put("Pant",9.99);deptItems.put("Shirt",7.99);
+        System.out.println("Please print the Items purchased by Customer");
+        String deptItemsPurchased = scan.next();
+        deptItems.get(deptItemsPurchased);
     }
 }

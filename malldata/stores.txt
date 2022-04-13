@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 [DepartmentStore{fittingRooms=1, storeName='Macy', storeFloor=1, storeNumber=1, storePhoneNumber=1}
 , GiftStore{occasion='1', storeName='memories', storeFloor=1, storeNumber=1, storePhoneNumber=1}, DepartmentStore{fittingRooms=1, storeName='1', storeFloor=1, storeNumber=1, storePhoneNumber=1}
 ][DepartmentStore{fittingRooms=1, storeName='Macy', storeFloor=1, storeNumber=101, storePhoneNumber=7567878787}
@@ -30,4 +31,8 @@
 , GiftStore{occasion='christmas', storeName='dd', storeFloor=1, storeNumber=101, storePhoneNumber=121}
 ][DepartmentStore{fittingRooms=1, storeName='MACY', storeFloor=1, storeNumber=101, storePhoneNumber=12121}
 ][CellServiceStore{cellService='verizon', storeName='Verizon', storeFloor=1, storeNumber=101, storePhoneNumber=1212121}
+=======
+[DepartmentStore{fittingRooms=1, storeName='Macy', storeFloor=1, storeNumber=Macy, storePhoneNumber=5712176451}
+, CellServiceStore{cellService='Verizon', storeName='AnyCall', storeFloor=2, storeNumber=AnyCall, storePhoneNumber=6712121721}
+>>>>>>> main
 ]
