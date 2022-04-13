@@ -230,6 +230,7 @@ public class Main {
         String cellServiceprovider = input.next();
         CellServiceStore ObjectcellServiceStoreName = new CellServiceStore(cellServiceStoreName, cellServiceStoreFloors, cellServiceStoreNumber, cellServiceStorePhone, cellServiceprovider);
         ObjectcellServiceStoreName.storeDetails();
+        ObjectcellServiceStoreName.item();
 
         return ObjectcellServiceStoreName;
     }
