@@ -13,7 +13,7 @@ import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
 import java.util.*;
 
-public class Main {
+public class Mainworking041322 {
     // File Path for Each Database to be kept.
     private static final Path storeDatabase = Paths.get(System.getProperty("user.dir") + "\\malldata\\stores.txt");
     private static final Path customerDatabase = Paths.get(System.getProperty("user.dir") + "\\malldata\\customer.txt");
@@ -187,7 +187,6 @@ public class Main {
 
         DepartmentStore ObjectDeptStoreName = new DepartmentStore(deptStoreName, deptStoreFloors, deptStoreNumber, deptStorePhone, deptFittingRoom);
         ObjectDeptStoreName.storeDetails();
-        ObjectDeptStoreName.item();
 
         return ObjectDeptStoreName;
     }
@@ -208,7 +207,6 @@ public class Main {
 
         GiftStore ObjectGiftStoreName = new GiftStore(giftStoreName, giftStoreFloors, giftStoreNumber, giftStorePhone, giftOccasion);
         ObjectGiftStoreName.storeDetails();
-        ObjectGiftStoreName.item();
 
         return ObjectGiftStoreName;
     }
@@ -228,9 +226,7 @@ public class Main {
         String cellServiceprovider = input.next();
         CellServiceStore ObjectcellServiceStoreName = new CellServiceStore(cellServiceStoreName, cellServiceStoreFloors, cellServiceStoreNumber, cellServiceStorePhone, cellServiceprovider);
         ObjectcellServiceStoreName.storeDetails();
-//        ObjectcellServiceStoreName.createAFileForItems();
         ObjectcellServiceStoreName.item();
-
         return ObjectcellServiceStoreName;
     }
 

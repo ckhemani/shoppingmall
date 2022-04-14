@@ -2,14 +2,19 @@ package store;
 
 import Interfaces.Items;
 
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.StandardOpenOption;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Scanner;
 
 public class CellServiceStore extends Store implements Items {
+    private static final Path cellItems = Paths.get(System.getProperty("user.dir") + "\\malldata\\cellitems.txt");
     private String cellService;
-    Scanner cellScanner = new Scanner(System.in);
+    private static Scanner cellScanner = new Scanner(System.in);
 
 
     public CellServiceStore(String storeName, int storeFloor, int storeNumber, long storePhoneNumber, String cellService) {
@@ -55,10 +60,24 @@ public class CellServiceStore extends Store implements Items {
             double itemsPriced = cellScanner.nextDouble();
             cellServiceItems.put(itemsForSale,itemsPriced);
         }
-        cellServiceItems.put("Apple Iphone 13",1299.99);
-        cellServiceItems.put("Samsung S21", 899.99);
-        cellServiceItems.put("Bluetooth Speakers", 49.99);
-        cellServiceItems.put("Apple Iphone Cover",29.99);
-        System.out.println(cellServiceItems);
+        System.out.println(cellServiceItems) ;
+    }
+
+    public void createAFileForItems() {
+        try {
+            if (Files.notExists(cellItems)) {
+                Files.createFile(cellItems);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void writeAFileForItems() {
+        try {
+            Files.writeString(cellItems, "test", StandardOpenOption.APPEND, StandardOpenOption.CREATE);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }

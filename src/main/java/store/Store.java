@@ -1,6 +1,8 @@
 package store;
 
-public class Store {
+import Interfaces.Items;
+
+public class Store implements Items {
     // Fields
     private String storeName;
     private int storeFloor;
@@ -58,6 +60,10 @@ public class Store {
     // Methods
     public void storeDetails(){
         System.out.println("I am Store in Mall");
+    }
+
+    public void item() {
+        System.out.println("This is test");
     }
 
     @Override
