@@ -1,5 +1,6 @@
 package store;
 
+import Interfaces.IBill;
 import Interfaces.Items;
 
 import java.util.ArrayList;
@@ -7,7 +8,7 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Scanner;
 
-public class DepartmentStore extends Store implements Items{
+public class DepartmentStore extends Store implements Items, IBill {
     private int fittingRooms;
     private static Scanner deptScanner = new Scanner(System.in);
 
@@ -55,5 +56,10 @@ public class DepartmentStore extends Store implements Items{
             deptItems.put(itemsForSale,itemsPriced);
         }
         System.out.println(deptItems) ;
+    }
+
+    @Override
+    public double bill() {
+        return 1.1;
     }
 }
