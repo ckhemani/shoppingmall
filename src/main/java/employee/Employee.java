@@ -1,6 +1,6 @@
 package employee;
 
-public class Employee emp{
+public class Employee{
     private String employeeName;
     private String employeeUserID;
     private String employeePassword;
