@@ -185,7 +185,7 @@ public class Main {
                     storeList.add(addCellServiceStore());
                     break;
                 case "10":
-                    System.out.println("Exit from While Loop");
+                    System.out.println("Exit Adding the Stores in Mall Database");
                     numberOfStoresToBeAddedInMall = 0;
                 default:
                     numberOfStoresToBeAddedInMall++;
