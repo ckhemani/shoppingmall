@@ -2,6 +2,8 @@ package store;
 
 import Interfaces.Items;
 
+import java.util.HashMap;
+
 public class Store implements Items {
     // Fields
     private String storeName;
@@ -62,8 +64,9 @@ public class Store implements Items {
         System.out.println("I am Store in Mall");
     }
 
-    public void item() {
+    public HashMap<String, Double> item() {
         System.out.println("This is test");
+        return null;
     }
 
     @Override

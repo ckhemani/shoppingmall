@@ -41,7 +41,7 @@ public class DepartmentStore extends Store implements Items, IBill {
     }
 
 
-    public void item() {
+    public HashMap<String, Double> item() {
         System.out.println("This is Dept Store Items");
         HashMap<String,Double> deptItems = new HashMap<>();
         HashSet<String> itemNames = new HashSet<>();
@@ -56,10 +56,33 @@ public class DepartmentStore extends Store implements Items, IBill {
             deptItems.put(itemsForSale,itemsPriced);
         }
         System.out.println(deptItems) ;
+        return deptItems;
     }
 
     @Override
     public double bill() {
-        return 1.1;
+        double saleTax = 0.06;
+        double totalCost = 0.0;
+        HashMap<String,Double> itemPrice = new HashMap<>();
+        itemPrice.put("Pant",30.0);
+        itemPrice.put("Shirt",10.0);
+        itemPrice.put("Luggage",100.0);
+        itemPrice.put("Wallet",20.0);
+        System.out.println("Please enter number of items to be bought");
+        int numberOfItems = deptScanner.nextInt();
+        for (int i=0;i< numberOfItems;i++) {
+            System.out.println("Please enter the item purchased from Dept Store? Pant/Shirt/Luggage/Wallet");
+            String itemBought = deptScanner.next();
+            System.out.println("Please enter the quantity bought");
+            int quantity = deptScanner.nextInt();
+            Double cost = itemPrice.get(itemBought) * quantity;
+            totalCost+=cost;
+        }
+        double totalBill = (totalCost * saleTax) + totalCost;
+        return totalBill;
+    }
+
+    public void check(){
+        System.out.println("Checking interface with Default method");
     }
 }

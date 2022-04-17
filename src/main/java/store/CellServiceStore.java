@@ -1,5 +1,6 @@
 package store;
 
+import Interfaces.IBill;
 import Interfaces.Items;
 
 import java.nio.file.Files;
@@ -11,7 +12,7 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Scanner;
 
-public class CellServiceStore extends Store implements Items {
+public class CellServiceStore extends Store implements Items, IBill {
     private static final Path cellItems = Paths.get(System.getProperty("user.dir") + "\\malldata\\cellitems.txt");
     private String cellService;
     private static Scanner cellScanner = new Scanner(System.in);
@@ -46,7 +47,7 @@ public class CellServiceStore extends Store implements Items {
     }
 
     @Override
-    public void item() {
+    public HashMap<String, Double> item() {
         System.out.println("This is Cell Service Items");
         HashMap<String,Double> cellServiceItems = new HashMap<>();
         HashSet <String> itemNames = new HashSet<>();
@@ -61,6 +62,7 @@ public class CellServiceStore extends Store implements Items {
             cellServiceItems.put(itemsForSale,itemsPriced);
         }
         System.out.println(cellServiceItems) ;
+        return cellServiceItems;
     }
 
     public void createAFileForItems() {
@@ -79,5 +81,28 @@ public class CellServiceStore extends Store implements Items {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    @Override
+    public double bill() {
+            double saleTax = 0.06;
+            double totalCost = 0.0;
+            HashMap<String,Double> itemPrice = new HashMap<>();
+            itemPrice.put("Iphone",1099.99);
+            itemPrice.put("Cable",9.99);
+            itemPrice.put("Charger",10.99);
+            itemPrice.put("Speaker",19.99);
+            System.out.println("Please enter number of items to be bought");
+            int numberOfItems = cellScanner.nextInt();
+            for (int i=0;i< numberOfItems;i++) {
+                System.out.println("Please enter the item purchased from Dept Store? Iphone/Cable/Charger/Speaker");
+                String itemBought = cellScanner.next();
+                System.out.println("Please enter the quantity bought");
+                int quantity = cellScanner.nextInt();
+                Double cost = itemPrice.get(itemBought) * quantity;
+                totalCost+=cost;
+            }
+            double totalBill = (totalCost * saleTax) + totalCost;
+            return totalBill;
     }
 }

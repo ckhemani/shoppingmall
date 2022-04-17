@@ -20,6 +20,8 @@ public class Main {
     private static final Path employeeDatabase = Paths.get(System.getProperty("user.dir") + "\\malldata\\employee.txt");
     private static final Path mallDatabase = Paths.get(System.getProperty("user.dir") + "\\malldata\\mall.txt");
 
+    //Type Interface
+
     // Global Scanner for int, String ....
     private static final Scanner input = new Scanner(System.in);
 
@@ -41,9 +43,9 @@ public class Main {
         while(true) {
             System.out.println("""
                     Please enter choice what you want to do?
-                    A. To add Store in Mall Database
-                    B. To add Employee to Mall Database
-                    C. To add Customer to Mall Database
+                    A. To add Store in Mall Database        D. To add Items to Department Store         G. Billing for Department Store 
+                    B. To add Employee to Mall Database     E. To add Items to Gift Store               H. Billing for Gift Store
+                    C. To add Customer to Mall Database     F. To add Items to Cell Service Store       I. Billing for Cell Service Store
                     Y. To Read all Files created  
                     Z. Exit the Menu""");
 
@@ -70,6 +72,30 @@ public class Main {
                     System.out.println(tysonCornerMall.getCustomer());
                     System.out.println(tysonCornerMall);
                     writeAFileForCustomer();
+                    break;
+                case "D":
+                    //Adding Items for Department store
+                    addDeptStoreItems();
+                    break;
+                case "E":
+                    //Adding Items for Gift Store
+                    addGiftStoreItems();
+                    break;
+                case "F":
+                    //Adding  Items for Cell Service store
+                    addCellServiceStoreItems();
+                    break;
+                case "G":
+                    //Billing for Dept Store
+                    DeptStoreBill();
+                    break;
+                case "H":
+                    //Billing for Gift Store
+                    giftStoreBill();
+                    break;
+                case "I":
+                    //Billing for Cell Service Store
+                    cellServiceStoreBill();
                     break;
                 case "Y":
                     //Read all Files
@@ -226,12 +252,144 @@ public class Main {
         long cellServiceStorePhone = input.nextLong();
         System.out.println("Enter the Cell service it provides");
         String cellServiceprovider = input.next();
+
         CellServiceStore ObjectcellServiceStoreName = new CellServiceStore(cellServiceStoreName, cellServiceStoreFloors, cellServiceStoreNumber, cellServiceStorePhone, cellServiceprovider);
         ObjectcellServiceStoreName.storeDetails();
-//        ObjectcellServiceStoreName.createAFileForItems();
-        ObjectcellServiceStoreName.item();
 
         return ObjectcellServiceStoreName;
+    }
+
+    public static HashMap<String, Double> addDeptStoreItems() {
+        HashMap<String,Double> deptStoreItems = new HashMap<>();
+        System.out.println("Enter the Object Name for Department Store");
+        String objectDeptStoreName = input.next();
+        System.out.println("Enter the dept store you want to name");
+        String deptStoreName = input.next();
+        System.out.println("Enter Floor");
+        int deptStoreFloors = input.nextInt();
+        System.out.println("Enter StoreNumber");
+        int deptStoreNumber = input.nextInt();
+        System.out.println("Phone Number");
+        long deptStorePhone = input.nextLong();
+        System.out.println("Number of Fitting Rooms");
+        int deptFittingRoom = input.nextInt();
+
+        DepartmentStore ObjectDeptStoreName = new DepartmentStore(deptStoreName, deptStoreFloors, deptStoreNumber, deptStorePhone, deptFittingRoom);
+        deptStoreItems = ObjectDeptStoreName.item();
+
+        return deptStoreItems;
+    }
+
+
+    public static HashMap<String, Double> addGiftStoreItems() {
+        HashMap<String,Double> giftStoreItems = new HashMap<>();
+        System.out.println("Enter the Object Name for Gift Store");
+        String objectGiftStoreName = input.next();
+        System.out.println("Enter the gift store you want to name");
+        String giftStoreName = input.next();
+        System.out.println("Enter Floor");
+        int giftStoreFloors = input.nextInt();
+        System.out.println("Enter StoreNumber");
+        int giftStoreNumber = input.nextInt();
+        System.out.println("Phone Number");
+        long giftStorePhone = input.nextLong();
+        System.out.println("Occasion it is famous for");
+        String giftOccasion = input.next();
+
+        GiftStore ObjectGiftStoreName = new GiftStore(giftStoreName, giftStoreFloors, giftStoreNumber, giftStorePhone, giftOccasion);
+        giftStoreItems = ObjectGiftStoreName.item();
+
+        return giftStoreItems;
+    }
+
+    public static HashMap<String, Double> addCellServiceStoreItems() {
+        HashMap<String,Double> cellServiceStoreItems = new HashMap<>();
+        System.out.println("Enter the Object Name for Cell Service Store");
+        String objectCellServiceStoreName = input.next();
+        System.out.println("Enter the Cell Service store you want to name");
+        String cellServiceStoreName = input.next();
+        System.out.println("Enter Floor");
+        int cellServiceStoreFloors = input.nextInt();
+        System.out.println("Enter StoreNumber");
+        int cellServiceStoreNumber = input.nextInt();
+        System.out.println("Phone Number");
+        long cellServiceStorePhone = input.nextLong();
+        System.out.println("Enter the Cell service it provides");
+        String cellServiceprovider = input.next();
+
+        CellServiceStore ObjectcellServiceStoreName = new CellServiceStore(cellServiceStoreName, cellServiceStoreFloors, cellServiceStoreNumber, cellServiceStorePhone, cellServiceprovider);
+        cellServiceStoreItems = ObjectcellServiceStoreName.item();
+
+        return cellServiceStoreItems;
+    }
+
+    public static Double DeptStoreBill() {
+        Double totalCost;
+        System.out.println("Enter the Object Name for Department Store");
+        String objectDeptStoreName = input.next();
+        System.out.println("Enter the dept store you want to name");
+        String deptStoreName = input.next();
+        System.out.println("Enter Floor");
+        int deptStoreFloors = input.nextInt();
+        System.out.println("Enter StoreNumber");
+        int deptStoreNumber = input.nextInt();
+        System.out.println("Phone Number");
+        long deptStorePhone = input.nextLong();
+        System.out.println("Number of Fitting Rooms");
+        int deptFittingRoom = input.nextInt();
+
+        DepartmentStore ObjectDeptStoreName = new DepartmentStore(deptStoreName, deptStoreFloors, deptStoreNumber, deptStorePhone, deptFittingRoom);
+        totalCost = ObjectDeptStoreName.bill();
+
+        System.out.println(totalCost);
+
+        return totalCost;
+    }
+
+    public static Double giftStoreBill() {
+        Double totalCost;
+        System.out.println("Enter the Object Name for Gift Store");
+        String objectGiftStoreName = input.next();
+        System.out.println("Enter the gift store you want to name");
+        String giftStoreName = input.next();
+        System.out.println("Enter Floor");
+        int giftStoreFloors = input.nextInt();
+        System.out.println("Enter StoreNumber");
+        int giftStoreNumber = input.nextInt();
+        System.out.println("Phone Number");
+        long giftStorePhone = input.nextLong();
+        System.out.println("Occasion it is famous for");
+        String giftOccasion = input.next();
+
+        GiftStore ObjectGiftStoreName = new GiftStore(giftStoreName, giftStoreFloors, giftStoreNumber, giftStorePhone, giftOccasion);
+        totalCost = ObjectGiftStoreName.bill();
+
+        System.out.println(totalCost);
+
+        return totalCost;
+    }
+
+    public static Double cellServiceStoreBill() {
+        Double totalCost;
+        System.out.println("Enter the Object Name for Cell Service Store");
+        String objectCellServiceStoreName = input.next();
+        System.out.println("Enter the Cell Service store you want to name");
+        String cellServiceStoreName = input.next();
+        System.out.println("Enter Floor");
+        int cellServiceStoreFloors = input.nextInt();
+        System.out.println("Enter StoreNumber");
+        int cellServiceStoreNumber = input.nextInt();
+        System.out.println("Phone Number");
+        long cellServiceStorePhone = input.nextLong();
+        System.out.println("Enter the Cell service it provides");
+        String cellServiceprovider = input.next();
+
+        CellServiceStore ObjectcellServiceStoreName = new CellServiceStore(cellServiceStoreName, cellServiceStoreFloors, cellServiceStoreNumber, cellServiceStorePhone, cellServiceprovider);
+        totalCost = ObjectcellServiceStoreName.bill();
+
+        System.out.println(totalCost);
+
+        return totalCost;
     }
 
     public static void writeAFileForStore() {

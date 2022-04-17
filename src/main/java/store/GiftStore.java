@@ -1,5 +1,6 @@
 package store;
 
+import Interfaces.IBill;
 import Interfaces.Items;
 
 import java.util.ArrayList;
@@ -7,7 +8,7 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Scanner;
 
-public class GiftStore extends Store implements Items {
+public class GiftStore extends Store implements Items, IBill {
     private String occasion;
     private static Scanner giftScanner = new Scanner(System.in);
 
@@ -41,7 +42,7 @@ public class GiftStore extends Store implements Items {
     }
 
 
-    public void item() {
+    public HashMap<String, Double> item() {
         System.out.println("This is Gift Store Items");
         HashMap<String,Double> giftItems = new HashMap<>();
         HashSet<String> itemNames = new HashSet<>();
@@ -56,5 +57,29 @@ public class GiftStore extends Store implements Items {
             giftItems.put(itemsForSale,itemsPriced);
         }
         System.out.println(giftItems);
+        return giftItems;
+    }
+
+    @Override
+    public double bill() {
+        double saleTax = 0.06;
+        double totalCost = 0.0;
+        HashMap<String,Double> itemPrice = new HashMap<>();
+        itemPrice.put("Wrap",9.99);
+        itemPrice.put("Greeting",1.99);
+        itemPrice.put("KeyChain",6.99);
+        itemPrice.put("Ribbon",2.99);
+        System.out.println("Please enter number of items to be bought");
+        int numberOfItems = giftScanner.nextInt();
+        for (int i=0;i< numberOfItems;i++) {
+            System.out.println("Please enter the item purchased from Dept Store? Wrap/Greeting/KeyChain/Ribbon");
+            String itemBought = giftScanner.next();
+            System.out.println("Please enter the quantity bought");
+            int quantity = giftScanner.nextInt();
+            Double cost = itemPrice.get(itemBought) * quantity;
+            totalCost+=cost;
+        }
+        double totalBill = (totalCost * saleTax) + totalCost;
+        return totalBill;
     }
 }

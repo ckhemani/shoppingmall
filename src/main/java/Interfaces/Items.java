@@ -3,6 +3,9 @@ package Interfaces;
 import java.util.HashMap;
 
 public interface Items {
-    void item();
+    HashMap<String, Double> item();
 
+    default void check(){
+        System.out.println("Test default function in Interface");
+    }
 }
