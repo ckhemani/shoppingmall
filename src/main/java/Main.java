@@ -37,7 +37,7 @@ public class Main {
         // Greetings
         welcomeToMall();
 
-        // Create File for Store,Employee,Customer and Mall Database
+        // Create File for Store,Employee,Customer,Mall Database,Department Items, Gift Items and Cell Service Store Items
         createAFileForStore();
         createAFileForEmployee();
         createAFileForCustomer();
