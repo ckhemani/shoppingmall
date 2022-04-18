@@ -1,11 +1,1 @@
-56}
-][DepartmentStore{fittingRooms=1, storeName='MACY', storeFloor=1, storeNumber=MACY, storePhoneNumber=121212}
-, GiftStore{occasion='christmas', storeName='FreeGift', storeFloor=2, storeNumber=FreeGift, storePhoneNumber=1212121}
-][CellServiceStore{cellService='verizon', storeName='Verizon', storeFloor=1, storeNumber=Verizon, storePhoneNumber=121212}
-][CellServiceStore{cellService='verizon', storeName='verizon', storeFloor=1, storeNumber=verizon, storePhoneNumber=121212}
-][DepartmentStore{fittingRooms=1, storeName='Macy', storeFloor=1, storeNumber=Macy, storePhoneNumber=121212}
-][CellServiceStore{cellService='verizon', storeName='ver', storeFloor=1, storeNumber=ver, storePhoneNumber=121212}
-][DepartmentStore{fittingRooms=1, storeName='MACY', storeFloor=1, storeNumber=MACY, storePhoneNumber=1313131}
-][DepartmentStore{fittingRooms=1, storeName='MACY', storeFloor=1, storeNumber=MACY, storePhoneNumber=1245[CellServiceStore{cellService='verizon', storeName='verizon', storeFloor=1, storeNumber=verizon, storePhoneNumber=12121}
-][CellServiceStore{cellService='verizon', storeName='Verizon', storeFloor=1, storeNumber=Verizon, storePhoneNumber=1212121}
-]
+[DepartmentStore{fittingRooms=1, storeName='Macy', storeFloor=1, storeNumber=Macy, storePhoneNumber=121212}][GiftStore{occasion='1', storeName='1', storeFloor=1, storeNumber=1, storePhoneNumber=1}, CellServiceStore{cellService='11', storeName='1', storeFloor=1, storeNumber=1, storePhoneNumber=1}][DepartmentStore{fittingRooms=1, storeName='Macy', storeFloor=1, storeNumber=Macy, storePhoneNumber=121212}][GiftStore{occasion='6', storeName='2', storeFloor=3, storeNumber=2, storePhoneNumber=5}, CellServiceStore{cellService='0012', storeName='sdfsdf', storeFloor=2, storeNumber=sdfsdf, storePhoneNumber=1245}]

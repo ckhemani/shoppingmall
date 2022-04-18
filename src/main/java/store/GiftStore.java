@@ -32,13 +32,14 @@ public class GiftStore extends Store implements Items, IBill {
 
     @Override
     public String toString() {
+        System.out.println();
         return "GiftStore{" +
                 "occasion='" + occasion + '\'' +
                 ", storeName='" + getStoreName() + '\'' +
                 ", storeFloor=" + getStoreFloor()+
                 ", storeNumber=" + getStoreName() +
                 ", storePhoneNumber=" + getStorePhoneNumber() +
-                '}' + "\n";
+                '}';
     }
 
 

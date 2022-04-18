@@ -13,7 +13,6 @@ import java.util.HashSet;
 import java.util.Scanner;
 
 public class CellServiceStore extends Store implements Items, IBill {
-    private static final Path cellItems = Paths.get(System.getProperty("user.dir") + "\\malldata\\cellitems.txt");
     private String cellService;
     private static Scanner cellScanner = new Scanner(System.in);
 
@@ -43,7 +42,7 @@ public class CellServiceStore extends Store implements Items, IBill {
                 ", storeFloor=" + getStoreFloor()+
                 ", storeNumber=" + getStoreName() +
                 ", storePhoneNumber=" + getStorePhoneNumber() +
-                '}' + "\n";
+                '}';
     }
 
     @Override
@@ -53,7 +52,17 @@ public class CellServiceStore extends Store implements Items, IBill {
         HashSet <String> itemNames = new HashSet<>();
         ArrayList<Double> itemPrices = new ArrayList<>();
         System.out.println("Please enter the Number of Items to be added in Cell Service Store Sold in Cell Store?");
-        int numberOfItems = cellScanner.nextInt();
+        String StringOfNumberOfItems = cellScanner.next();
+
+        try {
+            int seeWhetherInputisInt = Integer.parseInt(StringOfNumberOfItems);
+            System.out.println("Valid Input in int");
+        } catch (NumberFormatException e) {
+            System.out.println("Input is not valid int. Please try again");
+        }
+
+        int numberOfItems = Integer.parseInt(StringOfNumberOfItems);
+
         for (int i = 0;i<numberOfItems;i++){
             System.out.println("Please enter the items for sale");
             String itemsForSale = cellScanner.next();
@@ -63,24 +72,6 @@ public class CellServiceStore extends Store implements Items, IBill {
         }
         System.out.println(cellServiceItems) ;
         return cellServiceItems;
-    }
-
-    public void createAFileForItems() {
-        try {
-            if (Files.notExists(cellItems)) {
-                Files.createFile(cellItems);
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
-    public void writeAFileForItems() {
-        try {
-            Files.writeString(cellItems, "test", StandardOpenOption.APPEND, StandardOpenOption.CREATE);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
     }
 
     @Override
@@ -94,6 +85,13 @@ public class CellServiceStore extends Store implements Items, IBill {
             itemPrice.put("Speaker",19.99);
             System.out.println("Please enter number of items to be bought");
             int numberOfItems = cellScanner.nextInt();
+
+            try {
+                System.out.println("Valid Input in int");
+            } catch (NumberFormatException e) {
+                System.out.println("Input is not valid int. Please try again");
+            }
+
             for (int i=0;i< numberOfItems;i++) {
                 System.out.println("Please enter the item purchased from Dept Store? Iphone/Cable/Charger/Speaker");
                 String itemBought = cellScanner.next();

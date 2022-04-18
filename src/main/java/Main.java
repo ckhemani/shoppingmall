@@ -19,6 +19,9 @@ public class Main {
     private static final Path customerDatabase = Paths.get(System.getProperty("user.dir") + "\\malldata\\customer.txt");
     private static final Path employeeDatabase = Paths.get(System.getProperty("user.dir") + "\\malldata\\employee.txt");
     private static final Path mallDatabase = Paths.get(System.getProperty("user.dir") + "\\malldata\\mall.txt");
+    private static final Path deptItems = Paths.get(System.getProperty("user.dir") + "\\malldata\\deptitems.txt");
+    private static final Path giftItems = Paths.get(System.getProperty("user.dir") + "\\malldata\\giftitems.txt");
+    private static final Path cellItems = Paths.get(System.getProperty("user.dir") + "\\malldata\\cellitems.txt");
 
     //Type Interface
 
@@ -39,6 +42,9 @@ public class Main {
         createAFileForEmployee();
         createAFileForCustomer();
         createAFileForMall();
+        createAFileForDeptItems();
+        createAFileForCellItems();
+        createAFileForGiftItems();
 
         while(true) {
             System.out.println("""
@@ -147,6 +153,36 @@ public class Main {
         try {
             if (Files.notExists(mallDatabase)) {
                 Files.createFile(mallDatabase);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void createAFileForDeptItems() {
+        try {
+            if (Files.notExists(deptItems)) {
+                Files.createFile(deptItems);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void createAFileForGiftItems() {
+        try {
+            if (Files.notExists(giftItems)) {
+                Files.createFile(giftItems);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void createAFileForCellItems() {
+        try {
+            if (Files.notExists(cellItems)) {
+                Files.createFile(cellItems);
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -426,6 +462,14 @@ public class Main {
         }
     }
 
+    public void writeAFileForItems() {
+        try {
+            Files.writeString(cellItems, "test", StandardOpenOption.APPEND, StandardOpenOption.CREATE);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
     public static HashMap<Customer, EmailID> addCustomerandEmailID() {
         HashMap<Customer, EmailID> customerList = new HashMap<>();
 
@@ -490,40 +534,3 @@ public class Main {
         }
     }
 }
-
-//    public static Store addStore(String storeType) {
-//        System.out.println("Enter the Object Name for Department/Gift/Cell Store");
-//        String objectStoreTypeName = input.next();
-//        System.out.println("Enter the Department/Gift/Cell store you want to name");
-//        String StoreName = input.next();
-//        System.out.println("Enter Floor Number of Department/Gift/Cell Store");
-//        int StoreFloors = input.nextInt();
-//        System.out.println("Enter StoreNumber of Department/Gift/Cell Store");
-//        int StoreNumber = input.nextInt();
-//        System.out.println("Phone Number of Department/Gift/Cell");
-//        long StorePhone = input.nextLong();
-//        if(storeType.equals("Dept")){
-//            System.out.println("Number of Fitting Rooms in Department Store");
-//            int deptFittingRoom = input.nextInt();
-//            DepartmentStore objectDeptStoreName = new DepartmentStore(StoreName, StoreFloors, StoreNumber, StorePhone, deptFittingRoom);
-//            objectDeptStoreName.storeDetails();
-//            return objectDeptStoreName;
-//        }
-//        else if (storeType.equals("Gift")){
-//            System.out.println("Gift Occasion it is famous for");
-//            String giftOccasion = input.next();
-//            GiftStore objectGiftStoreName = new GiftStore(StoreName, StoreFloors, StoreNumber, StorePhone, giftOccasion);
-//            objectGiftStoreName.storeDetails();
-//            return objectGiftStoreName;
-//        }
-//        else if(storeType.equals("Cell")){
-//            System.out.println("Enter the Cell service it provides");
-//            String cellServiceprovider = input.next();
-//            CellServiceStore objectCellServiceStoreName = new CellServiceStore(StoreName, StoreFloors, StoreNumber, StorePhone, cellServiceprovider);
-//            objectCellServiceStoreName.storeDetails();
-//            return objectCellServiceStoreName;
-//        }
-//        else{
-//            System.out.println("Please enter Dept/Gift/Cell to add Store");
-//        }
-//    }

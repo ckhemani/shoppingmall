@@ -31,13 +31,14 @@ public class DepartmentStore extends Store implements Items, IBill {
 
     @Override
     public String toString() {
+        System.out.println();
         return "DepartmentStore{" +
                 "fittingRooms=" + fittingRooms +
                 ", storeName='" + getStoreName() + '\'' +
                 ", storeFloor=" + getStoreFloor()+
                 ", storeNumber=" + getStoreName() +
                 ", storePhoneNumber=" + getStorePhoneNumber() +
-                '}' + "\n";
+                '}';
     }
 
 
