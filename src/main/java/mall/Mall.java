@@ -79,9 +79,6 @@ public class Mall {
 
     // Methods
 
-    public void cart(){
-        System.out.println("Please add items in your Card");
-    }
 
     @Override
     public String toString() {
