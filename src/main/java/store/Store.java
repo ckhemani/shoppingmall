@@ -76,6 +76,6 @@ public class Store implements Items {
                 ", storeFloor=" + storeFloor +
                 ", storeNumber=" + storeNumber +
                 ", storePhoneNumber=" + storePhoneNumber +
-                '}' + "\n";
+                '}';
     }
 }

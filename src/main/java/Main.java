@@ -7,6 +7,9 @@ import store.DepartmentStore;
 import store.GiftStore;
 import store.Store;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -81,15 +84,15 @@ public class Main {
                     break;
                 case "D":
                     //Adding Items for Department store
-                    addDeptStoreItems();
+                    writeAFileForDeptItems();
                     break;
                 case "E":
                     //Adding Items for Gift Store
-                    addGiftStoreItems();
+                    writeAFileForGiftItems();
                     break;
                 case "F":
                     //Adding  Items for Cell Service store
-                    addCellServiceStoreItems();
+                    writeAFileForCellItems();
                     break;
                 case "G":
                     //Billing for Dept Store
@@ -430,6 +433,7 @@ public class Main {
 
     public static void writeAFileForStore() {
         try {
+            Files.writeString(storeDatabase,"\n",StandardOpenOption.APPEND, StandardOpenOption.CREATE);
             String storetoadd = String.valueOf(tysonCornerMall.getStore());
             Files.writeString(storeDatabase, storetoadd, StandardOpenOption.APPEND, StandardOpenOption.CREATE);
         } catch (Exception e) {
@@ -455,6 +459,7 @@ public class Main {
 
     public static void writeAFileForEmployee() {
         try {
+            Files.writeString(employeeDatabase,"\n",StandardOpenOption.APPEND, StandardOpenOption.CREATE);
             String employeeToAdd = String.valueOf(tysonCornerMall.getEmployee());
             Files.writeString(employeeDatabase, employeeToAdd, StandardOpenOption.APPEND, StandardOpenOption.CREATE);
         } catch (Exception e) {
@@ -462,15 +467,74 @@ public class Main {
         }
     }
 
-    public void writeAFileForItems() {
+    public static void writeAFileForDeptItems() {
         try {
-            Files.writeString(cellItems, "test", StandardOpenOption.APPEND, StandardOpenOption.CREATE);
+            HashMap<String,Double> list = new HashMap<>();
+            list = addDeptStoreItems();
+            BufferedWriter bf = null;
+            bf = new BufferedWriter( new FileWriter(String.valueOf(deptItems)));
+            for (Map.Entry<String, Double> entry :
+                    list.entrySet()) {
+
+                // put key and value separated by a colon
+                bf.write(entry.getKey() + ":"
+                        + entry.getValue());
+
+                // new line
+                bf.newLine();
+            }
+            bf.flush();
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
-    public static HashMap<Customer, EmailID> addCustomerandEmailID() {
+    public static void writeAFileForGiftItems() {
+        try {
+            HashMap<String,Double> list = new HashMap<>();
+            list = addGiftStoreItems();
+            BufferedWriter bf = null;
+            bf = new BufferedWriter( new FileWriter(String.valueOf(giftItems)));
+            for (Map.Entry<String, Double> entry :
+                    list.entrySet()) {
+
+                // put key and value separated by a colon
+                bf.write(entry.getKey() + ":"
+                        + entry.getValue());
+
+                // new line
+                bf.newLine();
+            }
+            bf.flush();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void writeAFileForCellItems() {
+        try {
+            HashMap<String,Double> list = new HashMap<>();
+            list = addCellServiceStoreItems();
+            BufferedWriter bf = null;
+            bf = new BufferedWriter( new FileWriter(String.valueOf(cellItems)));
+            //Files.writeString(cellItems, "test", StandardOpenOption.APPEND, StandardOpenOption.CREATE);
+            for (Map.Entry<String, Double> entry :
+                    list.entrySet()) {
+
+                // put key and value separated by a colon
+                bf.write(entry.getKey() + ":"
+                        + entry.getValue());
+
+                // new line
+                bf.newLine();
+            }
+            bf.flush();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+        public static HashMap<Customer, EmailID> addCustomerandEmailID() {
         HashMap<Customer, EmailID> customerList = new HashMap<>();
 
         System.out.println("Enter the Customer Name");
@@ -489,6 +553,7 @@ public class Main {
 
     public static void writeAFileForCustomer() {
         try {
+            Files.writeString(customerDatabase,"\n",StandardOpenOption.APPEND, StandardOpenOption.CREATE);
             String CustomerToAdd = String.valueOf(tysonCornerMall.getCustomer());
             Files.writeString(customerDatabase, CustomerToAdd, StandardOpenOption.APPEND, StandardOpenOption.CREATE);
         } catch (Exception e) {

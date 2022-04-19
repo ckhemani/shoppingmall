@@ -44,6 +44,6 @@ public class Employee{
                 "employeeName='" + employeeName + '\'' +
                 ", employeeUserID='" + employeeUserID + '\'' +
                 ", employeePassword='" + employeePassword + '\'' +
-                '}' + "\n";
+                '}';
     }
 }
