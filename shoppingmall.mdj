@@ -2569,7 +2569,7 @@
 											"top": 47,
 											"width": 255.455078125,
 											"height": 13,
-											"text": "MainWorking0419"
+											"text": "Main"
 										},
 										{
 											"_type": "LabelView",
@@ -6682,7 +6682,7 @@
 					"_parent": {
 						"$ref": "AAAAAAFF+qBWK6M3Z8Y="
 					},
-					"name": "MainWorking0419",
+					"name": "Main",
 					"ownedElements": [
 						{
 							"_type": "UMLDependency",
