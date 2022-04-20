@@ -16,6 +16,8 @@ public class CellServiceStore extends Store implements Items, IBill {
     private String cellService;
     private static Scanner cellScanner = new Scanner(System.in);
 
+    public CellServiceStore() {
+    }
 
     public CellServiceStore(String storeName, int storeFloor, int storeNumber, long storePhoneNumber, String cellService) {
         super(storeName, storeFloor, storeNumber, storePhoneNumber);

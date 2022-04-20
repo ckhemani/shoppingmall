@@ -12,6 +12,9 @@ public class GiftStore extends Store implements Items, IBill {
     private String occasion;
     private static Scanner giftScanner = new Scanner(System.in);
 
+    public GiftStore(){
+    }
+
     public GiftStore(String storeName, int storeFloor, int storeNumber, long storePhoneNumber, String occasion) {
         super(storeName, storeFloor, storeNumber, storePhoneNumber);
         this.occasion = occasion;

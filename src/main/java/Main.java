@@ -61,10 +61,10 @@ public class Main {
             switch (choice) {
                 case "A":
                     //Adding Stores in StoreDatabase and writing to stores.txt file
-                    System.out.println("Please enter the Number of Store to be added");
-                    int storeToBeAddedInMall = input.nextInt();
-                    System.out.println("You have selected " + storeToBeAddedInMall + " to be added in Mall Database");
-                    tysonCornerMall.setStore(storeToBeAddedInMallDatabase(storeToBeAddedInMall));
+//                    System.out.println("Please enter the Number of Store to be added");
+//                    int storeToBeAddedInMall = input.nextInt();
+//                    System.out.println("You have selected " + storeToBeAddedInMall + " to be added in Mall Database");
+                    addStore("Dept");
                     System.out.println(tysonCornerMall.getStore());
                     writeAFileForStore();
                     break;
@@ -234,6 +234,83 @@ public class Main {
         return storeList;
     }
 
+    public static Store addStore(String storeType) {
+        System.out.println("Please enter number of stores to be added");
+        int numberOfStores = input.nextInt();
+//        System.out.println("Please select the type of Store(Dept/Cell/Gift) you want to add in Mall Database");
+//        String storeType = input.next();
+        for (int i = 0;i< numberOfStores;i++) {
+            if(storeType.equals("Dept")){
+                System.out.println("Adding Department Store");
+                DepartmentStore store = new DepartmentStore();
+                System.out.println("Enter the dept store you want to name");
+                store.setStoreName(input.next());
+                System.out.println("Enter Floor");
+                store.setStoreFloor(input.nextInt());
+                System.out.println("Enter StoreNumber");
+                store.setStoreNumber(input.nextInt());
+                System.out.println("Phone Number");
+                store.setStorePhoneNumber(input.nextLong());
+                System.out.println("Number of Fitting Rooms");
+                store.setFittingRooms(input.nextInt());
+                return store;
+            }
+            else if (storeType.equals("Gift")){
+                System.out.println("Adding Gift Store");
+                GiftStore store = new GiftStore();
+                System.out.println("Enter the store you want to name");
+                store.setStoreName(input.next());
+                System.out.println("Enter Floor");
+                store.setStoreFloor(input.nextInt());
+                System.out.println("Enter StoreNumber");
+                store.setStoreNumber(input.nextInt());
+                System.out.println("Phone Number");
+                store.setStorePhoneNumber(input.nextLong());
+                System.out.println("Occasion it is famous for");
+                store.setOccasion(input.next());
+                return store;
+            }
+            else if (storeType.equals("Cell")){
+                System.out.println("Adding Cell Service Store");
+                CellServiceStore store = new CellServiceStore();
+                System.out.println("Enter the store you want to name");
+                store.setStoreName(input.next());
+                System.out.println("Enter Floor");
+                store.setStoreFloor(input.nextInt());
+                System.out.println("Enter StoreNumber");
+                store.setStoreNumber(input.nextInt());
+                System.out.println("Phone Number");
+                store.setStorePhoneNumber(input.nextLong());
+                System.out.println("Service Carrier");
+                store.setCellService(input.next());
+                return store;
+            }
+            else {
+                System.out.println("You didn't selected the proper StoreType");
+                break;
+            }
+        }
+//        DepartmentStore store = new DepartmentStore();
+//        store.setStoreName(input.next());
+        System.out.println("Enter the Object Name for Department Store");
+        String objectDeptStoreName = input.next();
+        System.out.println("Enter the dept store you want to name");
+        String deptStoreName = input.next();
+        System.out.println("Enter Floor");
+        int deptStoreFloors = input.nextInt();
+        System.out.println("Enter StoreNumber");
+        int deptStoreNumber = input.nextInt();
+        System.out.println("Phone Number");
+        long deptStorePhone = input.nextLong();
+        System.out.println("Number of Fitting Rooms");
+        int deptFittingRoom = input.nextInt();
+
+        DepartmentStore ObjectDeptStoreName = new DepartmentStore(deptStoreName, deptStoreFloors, deptStoreNumber, deptStorePhone, deptFittingRoom);
+        ObjectDeptStoreName.storeDetails();
+        ObjectDeptStoreName.item();
+
+        return ObjectDeptStoreName;
+    }
 
     public static Store addDeptStore() {
 //        DepartmentStore store = new DepartmentStore();
