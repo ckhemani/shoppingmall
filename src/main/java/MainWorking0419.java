@@ -15,7 +15,7 @@ import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
 import java.util.*;
 
-public class Main {
+public class MainWorking0419 {
     // File Path for Each Database to be kept.
     private static final Path storeDatabase = Paths.get(System.getProperty("user.dir") + "\\malldata\\stores.txt");
     private static final Path customerDatabase = Paths.get(System.getProperty("user.dir") + "\\malldata\\customer.txt");
@@ -434,7 +434,7 @@ public class Main {
 
     public static void writeAFileForStore() {
         try {
-            Files.writeString(storeDatabase,"\n", StandardOpenOption.APPEND, StandardOpenOption.CREATE);
+            Files.writeString(storeDatabase,"\n",StandardOpenOption.APPEND, StandardOpenOption.CREATE);
             String storetoadd = String.valueOf(tysonCornerMall.getStore());
             Files.writeString(storeDatabase, storetoadd, StandardOpenOption.APPEND, StandardOpenOption.CREATE);
         } catch (Exception e) {
@@ -535,7 +535,7 @@ public class Main {
         }
     }
 
-    public static HashMap<Customer, EmailID> addCustomerandEmailID() {
+        public static HashMap<Customer, EmailID> addCustomerandEmailID() {
         HashMap<Customer, EmailID> customerList = new HashMap<>();
 
         System.out.println("Enter the Customer Name");

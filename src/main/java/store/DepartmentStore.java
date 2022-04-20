@@ -12,6 +12,9 @@ public class DepartmentStore extends Store implements Items, IBill {
     private int fittingRooms;
     private static Scanner deptScanner = new Scanner(System.in);
 
+    public DepartmentStore(){
+    }
+
     public DepartmentStore(String storeName, int storeFloor, int storeNumber, long storePhoneNumber, int fittingRooms) {
         super(storeName, storeFloor, storeNumber, storePhoneNumber);
         this.fittingRooms = fittingRooms;

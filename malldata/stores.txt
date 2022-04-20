@@ -1,2 +1,3 @@
 [DepartmentStore{fittingRooms=4, storeName='Jcpenny', storeFloor=5, storeNumber=Jcpenny, storePhoneNumber=13456}]
 [DepartmentStore{fittingRooms=1, storeName='Macy', storeFloor=1, storeNumber=Macy, storePhoneNumber=3456}, GiftStore{occasion='christmas', storeName='Anytime', storeFloor=2, storeNumber=Anytime, storePhoneNumber=1345}]
+[DepartmentStore{fittingRooms=1, storeName='Macy', storeFloor=1, storeNumber=Macy, storePhoneNumber=121212}]
