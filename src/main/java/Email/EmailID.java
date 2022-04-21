@@ -3,6 +3,9 @@ package Email;
 public class EmailID {
     private String emailID;
 
+    public EmailID() {
+    }
+
     public EmailID(String emailID) {
         this.emailID = emailID;
     }

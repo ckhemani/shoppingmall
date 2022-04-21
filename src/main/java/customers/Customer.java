@@ -4,6 +4,9 @@ package customers;
 public class Customer {
         private String customerName;
 
+        public Customer() {
+        }
+
         public Customer(String customerName) {
                 this.customerName = customerName;
         }

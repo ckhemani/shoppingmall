@@ -48,6 +48,7 @@ public class Main {
         createAFileForCellItems();
         createAFileForGiftItems();
 
+        // Main Program to add the Store/Items/Do Billings
         while(true) {
             System.out.println("""
                     Please enter choice what you want to do?
@@ -117,10 +118,12 @@ public class Main {
         }
     }
 
+    // Welcome Function
     public static void welcomeToMall() {
         System.out.println("Welcome to " + tysonCornerMall.getMallName() + " the Biggest Mall in Virginia");
     }
 
+    // Create File for Stores
     public static void createAFileForStore() {
         try {
             if (Files.notExists(storeDatabase)) {
@@ -131,6 +134,7 @@ public class Main {
         }
     }
 
+    //Create File For Employee
     public static void createAFileForEmployee() {
         try {
             if (Files.notExists(employeeDatabase)) {
@@ -141,6 +145,7 @@ public class Main {
         }
     }
 
+    // Create File for Customer
     public static void createAFileForCustomer() {
         try {
             if (Files.notExists(customerDatabase)) {
@@ -325,18 +330,18 @@ public class Main {
         HashMap<String,Double> giftStoreItems = new HashMap<>();
         System.out.println("Enter the Object Name for Gift Store");
         String objectGiftStoreName = input.next();
-        System.out.println("Enter the gift store you want to name");
-        String giftStoreName = input.next();
-        System.out.println("Enter Floor");
-        int giftStoreFloors = input.nextInt();
-        System.out.println("Enter StoreNumber");
-        int giftStoreNumber = input.nextInt();
-        System.out.println("Phone Number");
-        long giftStorePhone = input.nextLong();
-        System.out.println("Occasion it is famous for");
-        String giftOccasion = input.next();
-
-        GiftStore ObjectGiftStoreName = new GiftStore(giftStoreName, giftStoreFloors, giftStoreNumber, giftStorePhone, giftOccasion);
+//        System.out.println("Enter the gift store you want to name");
+//        String giftStoreName = input.next();
+//        System.out.println("Enter Floor");
+//        int giftStoreFloors = input.nextInt();
+//        System.out.println("Enter StoreNumber");
+//        int giftStoreNumber = input.nextInt();
+//        System.out.println("Phone Number");
+//        long giftStorePhone = input.nextLong();
+//        System.out.println("Occasion it is famous for");
+//        String giftOccasion = input.next();
+        GiftStore ObjectGiftStoreName = new GiftStore();
+//        GiftStore ObjectGiftStoreName = new GiftStore(giftStoreName, giftStoreFloors, giftStoreNumber, giftStorePhone, giftOccasion);
         giftStoreItems = ObjectGiftStoreName.item();
 
         return giftStoreItems;
@@ -538,14 +543,17 @@ public class Main {
         public static HashMap<Customer, EmailID> addCustomerandEmailID() {
         HashMap<Customer, EmailID> customerList = new HashMap<>();
 
+        Customer myCustomer = new Customer();
         System.out.println("Enter the Customer Name");
-        String myCustomerName = input.next();
-        Customer myCustomer = new Customer(myCustomerName);
+        myCustomer.setCustomerName(input.next());
+//        String myCustomerName = input.next();
+//        Customer myCustomer = new Customer(myCustomerName);
 
-
+        EmailID myCustomerEmailID = new EmailID();
         System.out.println("Enter the Customer EmailID");
-        String mycustomerEmailID = input.next();
-        EmailID myCustomerEmailID = new EmailID(mycustomerEmailID);
+        myCustomerEmailID.setEmailID(input.next());
+//        String mycustomerEmailID = input.next();
+//        EmailID myCustomerEmailID = new EmailID(mycustomerEmailID);
 
         customerList.put(myCustomer, myCustomerEmailID);
         System.out.println(customerList);
